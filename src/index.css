@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@source "./src";
+
+/* Global base adjustments */
+@layer base {
+  html, body {
+    margin: 0;
+    height: 100%;
+  }
+}
