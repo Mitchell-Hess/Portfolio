@@ -2,17 +2,35 @@
 @import "tailwindcss";
 @source "./src";
 
+/* --- Force Tailwind 4 to include dark variants --- */
 @layer base {
-  html, body {
+  .dark & {}
+}
+
+@layer base {
+  html,
+  body {
     margin: 0;
     height: 100%;
     font-family: "Inter", sans-serif;
-    scroll-behavior: smooth;
-    background-color: #f9fafb; /* gray-50 */
-    color: #1f2937;            /* gray-800 */
+    @apply bg-white text-gray-800 transition-colors duration-300;
   }
 
-  ::selection {
-    background-color: #bfdbfe; /* blue-200 */
+  body.dark {
+    @apply bg-slate-900 text-gray-100;
+  }
+
+  section {
+    scroll-margin-top: 100px;
+    @apply transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-gray-900 dark:text-gray-100 transition-colors duration-300;
   }
 }
