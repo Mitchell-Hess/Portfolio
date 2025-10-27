@@ -1,9 +1,19 @@
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Contact from "./components/Contact";
+
 function App() {
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-600">
-        Tailwind is working 🎉
-      </h1>
+    <div id="top" className="w-screen min-h-screen bg-gray-50">
+      <Navbar />
+      <Hero />
+      <Experience />
+      <Projects />
+      <Education />
+      <Contact />
     </div>
   );
 }

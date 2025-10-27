@@ -1,10 +1,18 @@
+@import "@fontsource/inter";
 @import "tailwindcss";
 @source "./src";
 
-/* Global base adjustments */
 @layer base {
   html, body {
     margin: 0;
     height: 100%;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f9fafb; /* gray-50 */
+    color: #1f2937;            /* gray-800 */
+  }
+
+  ::selection {
+    background-color: #bfdbfe; /* blue-200 */
   }
 }
