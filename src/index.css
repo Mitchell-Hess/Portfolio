@@ -1,11 +1,6 @@
 @import "@fontsource/inter";
 @import "tailwindcss";
-@source "./src";
-
-/* --- Force Tailwind 4 to include dark variants --- */
-@layer base {
-  .dark & {}
-}
+@config "../tailwind.config.ts";
 
 @layer base {
   html,
@@ -16,7 +11,11 @@
     @apply bg-white text-gray-800 transition-colors duration-300;
   }
 
-  body.dark {
+  html.dark {
+    @apply bg-slate-900 text-gray-100;
+  }
+
+  html.dark body {
     @apply bg-slate-900 text-gray-100;
   }
 

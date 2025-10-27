@@ -27,39 +27,97 @@ export default function Education() {
   return (
     <motion.section
       id="education"
-      className="py-32 bg-white dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-300"
+      className="relative py-20 sm:py-32 bg-gradient-to-br from-blue-50/30 to-purple-50/30 dark:from-slate-900 dark:to-slate-800 overflow-hidden"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        <h2 className="text-4xl font-bold mb-12 text-center">Education</h2>
-        <div className="space-y-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2
+          className="text-4xl sm:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Education
+        </motion.h2>
+        <motion.p
+          className="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto text-lg"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          Academic foundation in computer science and AI
+        </motion.p>
+
+        <div className="space-y-8 max-w-5xl mx-auto">
           {education.map((ed, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-gray-50 dark:bg-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col md:flex-row items-center md:items-start gap-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group relative bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all border border-gray-100 dark:border-slate-700"
             >
-              <img
-                src={ed.logo}
-                alt={`${ed.school} logo`}
-                className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover shadow-md border-4 border-gray-100 dark:border-gray-700"
-              />
-              <div className="text-center md:text-left">
-                <h3 className="text-xl sm:text-2xl font-semibold text-blue-700 dark:text-blue-400">
-                  {ed.degree}
-                </h3>
-                <p className="font-medium mb-2">
-                  {ed.school} — {ed.date}
-                </p>
-                <ul className="list-disc list-inside space-y-1 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                  {ed.bullets.map((b, j) => (
-                    <li key={j}>{b}</li>
-                  ))}
-                </ul>
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+              <div className="relative flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+                <motion.div
+                  className="flex-shrink-0 mx-auto sm:mx-0"
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-50 transition"></div>
+                    <img
+                      src={ed.logo}
+                      alt={`${ed.school} logo`}
+                      className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover shadow-lg border-2 border-white dark:border-slate-800"
+                    />
+                  </div>
+                </motion.div>
+
+                <div className="flex-1 text-center sm:text-left space-y-4">
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
+                      {ed.degree}
+                    </h3>
+                    <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2 text-sm sm:text-base">
+                      <span className="font-semibold text-blue-600 dark:text-blue-400">
+                        {ed.school}
+                      </span>
+                      <span className="text-gray-400">•</span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        {ed.date}
+                      </span>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-2">
+                    {ed.bullets.map((b, j) => (
+                      <motion.li
+                        key={j}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.1 * j }}
+                        className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
+                      >
+                        <svg className="w-5 h-5 text-purple-600 dark:text-purple-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                        </svg>
+                        <span className="leading-relaxed">{b}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

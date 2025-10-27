@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Load theme preference
+    // Load theme preference - default to light mode
     const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const shouldBeDark = stored === "dark" || (!stored && prefersDark);
 
-    if (shouldBeDark) {
-      document.body.classList.add("dark");
+    // Ensure clean state - always remove dark class first
+    document.documentElement.classList.remove("dark");
+
+    // Only enable dark mode if explicitly set in localStorage
+    if (stored === "dark") {
+      document.documentElement.classList.add("dark");
       setDarkMode(true);
     } else {
-      document.body.classList.remove("dark");
+      // Default to light mode
       setDarkMode(false);
+      localStorage.setItem("theme", "light");
     }
   }, []);
 
@@ -23,47 +28,124 @@ export default function Navbar() {
     setDarkMode(next);
 
     if (next) {
-      document.body.classList.add("dark");
+      document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     } else {
-      document.body.classList.remove("dark");
+      document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
   };
 
-  const links = ["hero", "about", "projects", "experience", "education", "contact"];
+  const links = [
+    { id: "hero", label: "home" },
+    { id: "about", label: "about" },
+    { id: "projects", label: "projects" },
+    { id: "experience", label: "experience" },
+    { id: "education", label: "education" },
+    { id: "contact", label: "contact" },
+  ];
+
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+  };
+
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm z-50 transition">
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <nav className="fixed top-0 left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700 shadow-lg z-50 transition-all">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
         {/* Brand */}
-        <h1 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100">
-          Mitchell Hess
-        </h1>
+        <a href="#top" onClick={scrollToTop} className="group">
+          <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
+            Mitchell Hess
+          </h1>
+        </a>
 
-        {/* Links + toggle */}
-        <div className="flex items-center gap-5 sm:gap-8">
-          {links.map((section) => (
+        {/* Desktop Links + toggle */}
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
             <a
-              key={section}
-              href={`#${section}`}
-              className="capitalize text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition text-sm sm:text-base"
+              key={link.id}
+              href={`#${link.id}`}
+              className="capitalize text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition font-medium relative group"
             >
-              {section}
+              {link.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
 
           <button
             onClick={toggleDarkMode}
-            className="text-lg sm:text-xl p-2 rounded-full bg-gray-200 hover:bg-gray-300 text-gray-800
-                       dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-yellow-300
-                       transition-colors duration-200"
+            className="text-xl p-2 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
+                       dark:from-slate-700 dark:to-slate-800 dark:hover:from-slate-600 dark:hover:to-slate-700 dark:text-yellow-300
+                       transition-all duration-200 shadow-md hover:shadow-lg"
             aria-label="Toggle dark mode"
           >
             {darkMode ? "🌞" : "🌙"}
           </button>
         </div>
+
+        {/* Mobile menu button + dark mode toggle */}
+        <div className="flex md:hidden items-center gap-3">
+          <button
+            onClick={toggleDarkMode}
+            className="text-lg p-2 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-800
+                       dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-yellow-300
+                       transition-all duration-200"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? "🌞" : "🌙"}
+          </button>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 transition"
+            aria-label="Toggle menu"
+          >
+            <svg
+              className="w-6 h-6 text-gray-800 dark:text-gray-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden"
+          >
+            <div className="px-4 py-4 space-y-2">
+              {links.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  onClick={handleLinkClick}
+                  className="block capitalize text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-slate-800 px-4 py-3 rounded-lg transition font-medium"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
