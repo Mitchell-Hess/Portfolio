@@ -57,7 +57,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
         >
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -66,7 +66,7 @@ export default function Home() {
           </motion.h1>
 
           <motion.p
-            className="text-xl sm:text-2xl md:text-3xl mb-8 text-gray-700 dark:text-gray-300 font-medium"
+            className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300 font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -75,7 +75,7 @@ export default function Home() {
           </motion.p>
 
           <motion.p
-            className="text-lg sm:text-xl max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400"
+            className="text-base sm:text-lg max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}

@@ -53,7 +53,7 @@ export default function Education() {
           Academic foundation in computer science and AI
         </motion.p>
 
-        <div className="space-y-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {education.map((ed, i) => (
             <motion.div
               key={i}
@@ -66,7 +66,7 @@ export default function Education() {
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-              <div className="relative flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+              <div className="relative flex flex-col items-start gap-6">
                 <motion.div
                   className="flex-shrink-0 mx-auto sm:mx-0"
                   whileHover={{ scale: 1.1, rotate: -5 }}
@@ -82,12 +82,12 @@ export default function Education() {
                   </div>
                 </motion.div>
 
-                <div className="flex-1 text-center sm:text-left space-y-4">
+                <div className="flex-1 w-full space-y-4">
                   <div>
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">
                       {ed.degree}
                     </h3>
-                    <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2 text-sm sm:text-base">
+                    <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base">
                       <span className="font-semibold text-blue-600 dark:text-blue-400">
                         {ed.school}
                       </span>

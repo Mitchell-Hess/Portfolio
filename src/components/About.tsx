@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import MusicShowcase from "./widgets/MusicShowcase";
+import GuardiansTracker from "./widgets/GuardiansTracker";
 
 export default function About() {
   const skills = [
@@ -24,7 +26,7 @@ export default function About() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
-          className="text-4xl sm:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,12 +63,12 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="space-y-6"
             >
-              <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
                 I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">full-stack engineer and data scientist</span> at <span className="font-semibold">PepsiCo</span>, building
                 tools that combine data, design, and efficiency to create scalable
                 solutions.
               </p>
-              <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
                 Outside of work, I love <span className="font-semibold text-purple-600 dark:text-purple-400">music production</span>, guitar pedals, and
                 baseball. I'm always exploring new frameworks and ideas to improve
                 user experience.
@@ -103,8 +105,26 @@ export default function About() {
                 ))}
               </div>
             </motion.div>
+
           </div>
         </div>
+
+        {/* API Widgets - Full Width Section */}
+        <motion.div
+          className="mt-16 lg:mt-24"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-gray-800 dark:text-gray-200">
+            What I'm Into Right Now
+          </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <MusicShowcase />
+            <GuardiansTracker />
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );
