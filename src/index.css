@@ -91,21 +91,6 @@
   /* Performance optimizations */
   img {
     content-visibility: auto;
-    will-change: auto;
-    loading: lazy;
-  }
-
-  /* Lazy load images */
-  img[loading="lazy"] {
-    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-    background-size: 200% 100%;
-  }
-
-  /* Optimize animations */
-  @media (prefers-reduced-motion: no-preference) {
-    * {
-      will-change: auto;
-    }
   }
 
   /* Optimize scroll performance on mobile */
@@ -116,59 +101,6 @@
 
     html {
       scroll-behavior: auto;
-      touch-action: pan-y;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* Ensure touch scrolling works immediately */
-    body {
-      -webkit-overflow-scrolling: touch;
-      overflow-y: scroll;
-      touch-action: pan-y;
-      overscroll-behavior-y: contain;
-      position: relative;
-    }
-
-    /* Ensure all sections and containers allow touch scrolling */
-    section {
-      touch-action: pan-y;
-    }
-
-    /* Important: Keep pointer-events-none for decorative elements */
-    [class*="pointer-events-none"]:not(.absolute):not(.fixed) {
-      pointer-events: none !important;
-    }
-
-    /* Reduce animation delays on mobile */
-    [class*="motion-"] {
-      animation-delay: 0s !important;
-      transition-delay: 0s !important;
-    }
-
-    /* Optimize images on mobile */
-    img {
-      will-change: auto;
-      transform: translateZ(0);
-      backface-visibility: hidden;
-    }
-
-    /* Prevent zoom on double tap */
-    a, button, input, select, textarea {
-      touch-action: manipulation;
-    }
-  }
-
-  /* Desktop-specific optimizations */
-  @media (min-width: 769px) {
-    /* Enable GPU acceleration for smooth scrolling */
-    body {
-      transform: translateZ(0);
-      backface-visibility: hidden;
-    }
-
-    /* Optimize animations */
-    [class*="motion-"] {
-      will-change: transform, opacity;
     }
   }
 }

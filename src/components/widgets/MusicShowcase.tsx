@@ -51,7 +51,7 @@ export default function MusicShowcase() {
 
         setBands(prev => prev.map((band, index) => ({
           ...band,
-          listeners: index === 0 ? "2.1M" : "374" // Use actual counts from your manual check
+          listeners: index === 0 ? "533.9K" : "111" // Use actual counts from your manual check
         })));
 
         setLastUpdated(new Date());
@@ -60,7 +60,7 @@ export default function MusicShowcase() {
         // Fallback to static counts if fetch fails
         setBands(prev => prev.map((band, index) => ({
           ...band,
-          listeners: index === 0 ? "2.1M" : "374"
+          listeners: index === 0 ? "533.9K" : "111"
         })));
       }
     };

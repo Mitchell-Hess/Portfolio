@@ -64,14 +64,10 @@ export default function About() {
               className="space-y-6"
             >
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">Software Engineer / Data Scientist</span> at <span className="font-semibold">PepsiCo</span>, building
-                tools that combine data, design, and efficiency to create scalable
-                solutions.
+                I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">Software Engineer / Data Scientist</span> at <span className="font-semibold">PepsiCo</span>, where I build data quality frameworks and optimize pipelines to help teams work more efficiently. Most of my day is spent in Python and Databricks, trying to make complicated things simple.
               </p>
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                Outside of work, I love <span className="font-semibold text-purple-600 dark:text-purple-400">music production</span>, guitar pedals, and
-                baseball. I'm always exploring new frameworks and ideas to improve
-                user experience.
+                When I'm not coding, I'm usually playing guitar in my band <span className="font-semibold text-purple-600 dark:text-purple-400">eileen</span>, climbing at the gym, or watching the Guardians lose in heartbreaking fashion. I tend to dive deep into whatever I'm interested in at the moment.
               </p>
             </motion.div>
 
