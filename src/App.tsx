@@ -10,17 +10,19 @@ import DynamicGradientBackground from "./components/DynamicGradientBackground";
 
 function App() {
   return (
-    <div id="top" className="w-full min-h-screen overflow-x-hidden cursor-none">
+    <div id="top" className="w-full min-h-screen overflow-x-hidden cursor-none flex flex-col">
       <CustomCursor />
       <DynamicGradientBackground />
-      <div className="relative z-10">
+      <div className="relative z-10 flex-1 flex flex-col">
         <Navbar />
-        <Home />
-        <About />
-        <Projects />
-        <Experience />
-        <Education />
-        <Contact />
+        <main className="flex-1">
+          <Home />
+          <About />
+          <Projects />
+          <Experience />
+          <Education />
+          <Contact />
+        </main>
       </div>
     </div>
   );
