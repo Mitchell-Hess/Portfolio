@@ -11,7 +11,7 @@ interface Band {
 }
 
 export default function MusicShowcase() {
-  const [bands, setBands] = useState<Band[]>([
+  const [bands] = useState<Band[]>([
     {
       name: "Porcupine Tree",
       description: "Favorite Band - Progressive Rock Legends",
@@ -29,7 +29,7 @@ export default function MusicShowcase() {
       gradient: "from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20",
     },
   ]);
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   if (loading) {
     return (

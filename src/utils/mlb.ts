@@ -27,7 +27,6 @@ export async function getGuardiansGames(season: number = new Date().getFullYear(
     }
 
     const data = await response.json();
-    const games: MLBGame[] = [];
 
     if (data.dates) {
       const allGames: Array<MLBGame & { gameDate: Date; state: string }> = [];
