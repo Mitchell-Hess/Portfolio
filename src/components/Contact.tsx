@@ -4,9 +4,9 @@ export default function Contact() {
   const contactMethods = [
     {
       name: "Email",
-      href: "mailto:mitchell.hess@example.com",
+      href: "mailto:mitchell.hess@outlook.com",
       icon: "📧",
-      label: "mitchell.hess@example.com",
+      label: "mitchell.hess@outlook.com",
     },
     {
       name: "LinkedIn",

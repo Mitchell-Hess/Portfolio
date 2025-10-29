@@ -64,7 +64,7 @@ export default function About() {
               className="space-y-6"
             >
               <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">full-stack engineer and data scientist</span> at <span className="font-semibold">PepsiCo</span>, building
+                I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">Software Engineer / Data Scientist</span> at <span className="font-semibold">PepsiCo</span>, building
                 tools that combine data, design, and efficiency to create scalable
                 solutions.
               </p>

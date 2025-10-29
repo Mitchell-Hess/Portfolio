@@ -8,8 +8,8 @@ export default function Education() {
       logo: "/assets/northtexas_logo.jpg",
       date: "Expected May 2026",
       bullets: [
-        "Focus: AI, Data Mining, Advanced Software Engineering",
-        "GPA: 4.0 / 4.0",
+        "Highlighted Courses: Software Development for AI, Usability Testing in Software Engineering, Analysis of Computer Algorithms",
+        "GPA: 4.0",
       ],
     },
     {
@@ -18,8 +18,10 @@ export default function Education() {
       logo: "/assets/northtexas_logo.jpg",
       date: "May 2024",
       bullets: [
-        "Minor in Mathematics, Cybersecurity Certificate",
-        "Relevant Courses: Algorithms, AI Development, Usability Testing",
+        "Minor in Mathematics",
+        "Awarded the CSCE Undergrduate Cybersecurity Certificate",
+        "Member of the Guitar Club",
+        "Magna Cum Laude"
       ],
     },
   ];
@@ -50,7 +52,7 @@ export default function Education() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Academic foundation in computer science and AI
+          Academic foundation in Computer Science and Software Engineering
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">

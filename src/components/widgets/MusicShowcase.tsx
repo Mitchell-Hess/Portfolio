@@ -61,7 +61,7 @@ export default function MusicShowcase() {
             Music I Love
           </h4>
           <p className="text-xs text-gray-500 dark:text-gray-400">
-            Favorite Artists
+            Highlighted Artists
           </p>
         </div>
       </div>

@@ -71,7 +71,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Full-Stack Software Engineer & Data Scientist
+            Full-Stack Software Engineer
           </motion.p>
 
           <motion.p
