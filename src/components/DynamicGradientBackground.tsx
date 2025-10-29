@@ -3,8 +3,16 @@ import { useEffect, useState } from "react";
 const DynamicGradientBackground = () => {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const [isDark, setIsDark] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if mobile device
+    const checkMobile = () => {
+      setIsMobile('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    };
+
+    checkMobile();
+
     // Check initial dark mode state
     const checkDarkMode = () => {
       setIsDark(document.documentElement.classList.contains("dark"));
@@ -19,20 +27,34 @@ const DynamicGradientBackground = () => {
       attributeFilter: ["class"],
     });
 
+    // Throttle mouse move for better performance
+    let rafId: number | null = null;
     const handleMouseMove = (e: MouseEvent) => {
-      // Convert mouse position to percentage
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      setMousePosition({ x, y });
+      if (rafId) return;
+
+      rafId = requestAnimationFrame(() => {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+        setMousePosition({ x, y });
+        rafId = null;
+      });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    // Only add mouse listener on non-mobile devices
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    }
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (!isMobile) {
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
       observer.disconnect();
     };
-  }, []);
+  }, [isMobile]);
 
   // Calculate gradient colors based on cursor position
   const getGradientStyle = () => {
@@ -61,9 +83,14 @@ const DynamicGradientBackground = () => {
     }
   };
 
+  // Don't render gradient on mobile for better performance
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <div
-      className="fixed inset-0 z-[1] mix-blend-multiply dark:mix-blend-screen transition-all duration-200 ease-out pointer-events-none"
+      className="fixed inset-0 z-[1] mix-blend-multiply dark:mix-blend-screen transition-all duration-200 ease-out pointer-events-none will-change-transform"
       style={getGradientStyle()}
     />
   );

@@ -3,6 +3,11 @@
 @config "../tailwind.config.ts";
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
   html,
   body {
     margin: 0;
