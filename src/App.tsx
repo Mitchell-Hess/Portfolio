@@ -5,17 +5,23 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
+import CustomCursor from "./components/CustomCursor";
+import DynamicGradientBackground from "./components/DynamicGradientBackground";
 
 function App() {
   return (
-    <div id="top" className="w-full min-h-screen overflow-x-hidden">
-      <Navbar />
-      <Home />
-      <About />
-      <Projects />
-      <Experience />
-      <Education />
-      <Contact />
+    <div id="top" className="w-full min-h-screen overflow-x-hidden cursor-none">
+      <CustomCursor />
+      <DynamicGradientBackground />
+      <div className="relative z-10">
+        <Navbar />
+        <Home />
+        <About />
+        <Projects />
+        <Experience />
+        <Education />
+        <Contact />
+      </div>
     </div>
   );
 }

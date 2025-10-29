@@ -79,9 +79,9 @@ export default function Navbar() {
 
           <button
             onClick={toggleDarkMode}
-            className="text-xl p-2 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
+            className="text-xl w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
                        dark:from-slate-700 dark:to-slate-800 dark:hover:from-slate-600 dark:hover:to-slate-700 dark:text-yellow-300
-                       transition-all duration-200 shadow-md hover:shadow-lg"
+                       transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center flex-shrink-0"
             aria-label="Toggle dark mode"
           >
             {darkMode ? "🌞" : "🌙"}
@@ -92,9 +92,9 @@ export default function Navbar() {
         <div className="flex md:hidden items-center gap-3">
           <button
             onClick={toggleDarkMode}
-            className="text-lg p-2 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
+            className="text-lg w-9 h-9 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
                        dark:from-slate-700 dark:to-slate-800 dark:hover:from-slate-600 dark:hover:to-slate-700 dark:text-yellow-300
-                       transition-all duration-200 shadow-md hover:shadow-lg aspect-square flex items-center justify-center"
+                       transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center flex-shrink-0"
             aria-label="Toggle dark mode"
           >
             {darkMode ? "🌞" : "🌙"}
