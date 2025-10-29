@@ -89,8 +89,8 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          I'm always open to new opportunities, collaborations, and interesting projects.
-          Let's connect and build something amazing!
+          Open to new opportunities and interesting projects.
+          Feel free to reach out!
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

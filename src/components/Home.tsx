@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <section
-      id="hero"
+      id="home"
       className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
     >
       {/* Animated background gradient orbs - hidden on mobile for performance */}
@@ -54,13 +54,13 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
         >
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.05 }}
           >
             Hi, I'm Mitchell Hess
           </motion.h1>
@@ -69,7 +69,7 @@ export default function Home() {
             className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300 font-medium"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             Full-Stack Software Engineer
           </motion.p>
@@ -78,7 +78,7 @@ export default function Home() {
             className="text-base sm:text-lg max-w-3xl mx-auto mb-10 text-gray-600 dark:text-gray-400"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.3, delay: 0.15 }}
           >
             I build full stack applications that combine clean code with thoughtful design. Whether it's creating intuitive user interfaces or optimizing backend systems, I focus on writing software that's both functional and maintainable.
           </motion.p>
@@ -87,7 +87,7 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
           >
             <a
               href="#projects"

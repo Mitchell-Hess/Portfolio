@@ -12,7 +12,7 @@ export default function Projects() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent px-2"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent px-4 pb-1"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,7 +27,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Building innovative solutions that solve real-world problems
+          Side projects where I experiment with new tech and bring ideas to life
         </motion.p>
 
         <div className="space-y-8">
@@ -64,8 +64,21 @@ export default function Projects() {
                     ScoutMaster
                   </h3>
                   <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                    A mobile app that helps you find and visit the real world locations where your favorite movies and TV shows were filmed. Explore interactive maps, get directions, and discover behind the scenes details about iconic filming spots. Perfect for movie buffs and travelers looking to experience cinema in a whole new way.
+                    A mobile app that helps you find and visit the real-world locations where your favorite movies and TV shows were filmed. Explore interactive maps, get directions, and discover behind-the-scenes details about iconic filming spots.
                   </p>
+                </div>
+
+                {/* Development Process */}
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">
+                    Development Process
+                  </h4>
+                  <ul className="text-base text-gray-600 dark:text-gray-400 space-y-1">
+                    <li>• Built cross-platform mobile app with React Native for iOS and Android</li>
+                    <li>• Integrated Google Maps API for interactive location exploration</li>
+                    <li>• Designed REST API with Node.js and MongoDB to manage filming locations</li>
+                    <li>• Implemented Firebase Auth for user accounts and saved locations</li>
+                  </ul>
                 </div>
 
                 {/* Tech Stack */}

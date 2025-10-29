@@ -60,7 +60,12 @@ export default function GuardiansTracker() {
     return (
       <div className="p-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl border border-gray-200 dark:border-slate-600">
         <div className="flex items-center gap-3">
-          <div className="text-2xl">⚾</div>
+          <svg className="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+            <path d="M8 12c0 2.21 1.79 4 4 4s4-1.79 4-4" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+            <circle cx="12" cy="12" r="1"/>
+          </svg>
           <div>
             <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
               Unable to load games
@@ -75,17 +80,16 @@ export default function GuardiansTracker() {
   }
 
   return (
-    <div className="p-5 bg-gradient-to-br from-red-50 via-white to-blue-50 dark:from-red-900/20 dark:via-slate-800 dark:to-blue-900/20 rounded-2xl border border-red-200 dark:border-red-800 shadow-md">
+    <div className="h-full p-5 bg-gradient-to-br from-red-50 via-white to-blue-50 dark:from-red-900/20 dark:via-slate-800 dark:to-blue-900/20 rounded-2xl border border-red-200 dark:border-red-800 shadow-md flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-blue-600 rounded-full flex items-center justify-center shadow-md">
-              <span className="text-white font-bold text-sm">CLE</span>
-            </div>
-            <div className="absolute -bottom-1 -right-1 bg-white dark:bg-slate-800 rounded-full p-0.5">
-              <span className="text-lg">⚾</span>
-            </div>
+            <img
+              src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/cle.png"
+              alt="Cleveland Guardians"
+              className="w-12 h-12 object-contain"
+            />
           </div>
           <div>
             <h4 className="font-bold text-gray-900 dark:text-gray-100">
@@ -96,20 +100,34 @@ export default function GuardiansTracker() {
             </p>
           </div>
         </div>
-        {record && (
-          <div className="text-right">
-            <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-              2024 Season
-            </p>
-            <p className="text-lg font-bold text-gray-900 dark:text-gray-100">
-              {record}
-            </p>
-          </div>
-        )}
+        <div className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+          <motion.div
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-2 h-2 bg-blue-500 rounded-full"
+          />
+          <span>Live</span>
+        </div>
       </div>
 
+      {/* Record Banner */}
+      {record && (
+        <div className="mb-4 p-3 bg-gradient-to-r from-red-50 to-blue-50 dark:from-red-900/20 dark:to-blue-900/20 rounded-xl border border-red-200/50 dark:border-red-800/50">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">2024 Season Record</p>
+              <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{record}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-xs text-gray-500 dark:text-gray-400">Division</p>
+              <p className="text-sm font-bold text-blue-600 dark:text-blue-400">AL Central</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Games List */}
-      <div className="space-y-2">
+      <div className="space-y-2 flex-1">
         {games.length === 0 ? (
           <div className="p-4 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 text-center">
             <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -165,7 +183,9 @@ export default function GuardiansTracker() {
             )}
 
             {!game.result && game.time && (
-              <div className="text-xl">🎯</div>
+              <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             )}
           </motion.div>
           ))
@@ -174,8 +194,8 @@ export default function GuardiansTracker() {
 
       {/* Footer */}
       <div className="mt-4 pt-3 border-t border-gray-200 dark:border-slate-700">
-        <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-          Go Guards! 💙❤️
+        <p className="text-xs text-center font-medium">
+          <span className="text-red-600">Go</span> <span className="text-blue-600">Guards!</span>
         </p>
       </div>
     </div>

@@ -6,31 +6,31 @@ export default function Experience() {
       role: "Software Engineer / Data Scientist",
       company: "PepsiCo, Inc.",
       logo: "/assets/pepsico_logo.jpg",
-      period: "Jul 2024 – Present",
+      period: "Jul 2024 to Present",
       details: [
-        "Built a Python data-quality framework adopted company-wide for automated validation and reporting.",
-        "Improved pipeline efficiency by 30% through optimized parallelized logic.",
-        "Partnered with DevOps to deploy on AWS using Docker and Rancher for scalability.",
+        "Created a Python framework that validates data quality across pipelines, which the team adopted company-wide for consistency. It automatically flags issues and generates reports, saving hours of manual checks.",
+        "Reworked pipeline logic to run tasks in parallel instead of sequentially, cutting processing time by 30%. The speedup was especially noticeable during peak load periods.",
+        "Worked with DevOps to containerize the framework with Docker and deploy it on AWS using Rancher, making it easier to scale as data volumes grew.",
       ],
     },
     {
       role: "Data Scientist Intern",
       company: "PepsiCo, Inc.",
       logo: "/assets/pepsico_logo.jpg",
-      period: "May 2023 – Aug 2023",
+      period: "May 2023 to Aug 2023",
       details: [
-        "Developed ML models to predict demand and detect ETL anomalies, reducing manual debug time 40%.",
-        "Automated data-quality visualizations and forecasting dashboards.",
+        "Built ML models that predict demand patterns and catch ETL issues before they cause problems. This reduced the time engineers spent debugging by about 40%.",
+        "Set up automated dashboards that visualize data quality metrics and forecasts, making it easier for the team to spot trends and anomalies at a glance.",
       ],
     },
     {
       role: "Software Development Intern",
       company: "Good Faith Energy",
       logo: "/assets/good_faith_energy_logo.jpg",
-      period: "May 2022 – Aug 2022",
+      period: "May 2022 to Aug 2022",
       details: [
-        "Built a solar-pricing tool with Svelte, Node.js, and PostgreSQL for real-time quotes.",
-        "Reduced quote generation time 20% with responsive UI and streamlined workflow.",
+        "Developed a solar pricing tool using Svelte, Node.js, and PostgreSQL that generates real-time quotes based on customer inputs and current pricing data.",
+        "Streamlined the quoting workflow by building a responsive interface that cut generation time by 20%, helping the sales team close deals faster.",
       ],
     },
   ];
@@ -63,7 +63,7 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Professional journey building impactful solutions
+          Where I've worked and what I've built
         </motion.p>
 
         <div className="space-y-8">

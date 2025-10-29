@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -29,24 +28,12 @@ const CustomCursor = () => {
       setIsPointer(!!isClickable);
     };
 
-    const handleMouseLeave = () => {
-      setIsHidden(true);
-    };
-
-    const handleMouseEnter = () => {
-      setIsHidden(false);
-    };
-
     window.addEventListener("mousemove", updateCursorPosition);
     window.addEventListener("mouseover", handleMouseOver);
-    document.addEventListener("mouseleave", handleMouseLeave);
-    document.addEventListener("mouseenter", handleMouseEnter);
 
     return () => {
       window.removeEventListener("mousemove", updateCursorPosition);
       window.removeEventListener("mouseover", handleMouseOver);
-      document.removeEventListener("mouseleave", handleMouseLeave);
-      document.removeEventListener("mouseenter", handleMouseEnter);
     };
   }, []);
 
@@ -56,28 +43,23 @@ const CustomCursor = () => {
   }
 
   return (
-    <>
-      {/* Simple cursor dot with minimal movement */}
+    <div
+      className="fixed pointer-events-none"
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        zIndex: 99999,
+        transform: 'translate(-50%, -50%)',
+      }}
+    >
       <div
-        className={`fixed top-0 left-0 pointer-events-none z-[9999] ${
-          isHidden ? "opacity-0" : "opacity-100"
+        className={`rounded-full transition-all duration-200 ring-1 ring-white/40 ${
+          isPointer
+            ? "w-4 h-4 bg-gradient-to-br from-blue-600 to-purple-600 scale-125 shadow-lg shadow-purple-500/50"
+            : "w-3 h-3 bg-gradient-to-br from-blue-600 to-purple-600 shadow-md shadow-blue-500/30"
         }`}
-        style={{
-          transform: `translate(${position.x}px, ${position.y}px)`,
-          willChange: "transform",
-        }}
-      >
-        <div className="relative -translate-x-1/2 -translate-y-1/2">
-          <div
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${
-              isPointer
-                ? "bg-gradient-to-br from-blue-600 to-purple-600 scale-125 shadow-lg shadow-purple-500/50"
-                : "bg-gradient-to-br from-blue-600 to-purple-600 shadow-md shadow-blue-500/30"
-            }`}
-          />
-        </div>
-      </div>
-    </>
+      />
+    </div>
   );
 };
 
