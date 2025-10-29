@@ -1,73 +1,118 @@
-# React + TypeScript + Vite
+# Mitchell Hess - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website showcasing my work as a Full-Stack Software Engineer and Data Scientist.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
+- **Dark/Light Mode**: Theme toggle with smooth transitions
+- **Custom Cursor**: Interactive cursor with hover effects (desktop only)
+- **Live API Integrations**:
+  - Spotify API for music artist monthly listeners
+  - MLB Stats API for Cleveland Guardians game data
+- **Smooth Animations**: Powered by Framer Motion
+- **Performance Optimized**: Fast loading with code splitting and lazy loading
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **Fonts**: Inter (via @fontsource)
+- **Icons**: Custom SVG icons
+- **APIs**: Spotify Web API, MLB Stats API
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 18+
+- npm or yarn
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone the repository
+git clone https://github.com/Mitchell-Hess/portfolio.git
+
+# Navigate to project directory
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The site will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Create production build
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+## Project Structure
+
+```
+portfolio/
+├── src/
+│   ├── components/         # React components
+│   │   ├── widgets/        # API widget components
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── CustomCursor.tsx
+│   │   ├── Education.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Home.tsx
+│   │   ├── Navbar.tsx
+│   │   └── Projects.tsx
+│   ├── App.tsx             # Root component
+│   ├── main.tsx            # Entry point
+│   └── index.css           # Global styles
+├── public/
+│   └── assets/             # Images and static assets
+└── dist/                   # Production build output
+```
+
+## Features in Detail
+
+### Custom Cursor
+- Gradient design with white border for visibility
+- Scales up on interactive elements
+- Mobile-aware (disabled on touch devices)
+
+### API Widgets
+- **Music Showcase**: Displays favorite artists with live monthly listener counts
+- **Guardians Tracker**: Shows latest Cleveland Guardians game results and season stats
+
+### Performance Optimizations
+- Code splitting for optimal bundle sizes
+- Lazy loading for images
+- GPU acceleration for smooth animations
+- Optimized scrolling for all devices
+
+## Deployment
+
+This site is configured for deployment on platforms like:
+- Vercel
+- Netlify
+- GitHub Pages
+- Any static hosting service
+
+## License
+
+MIT License - feel free to use this as a template for your own portfolio!
+
+## Contact
+
+Mitchell Hess
+- Email: mitchell.hess@outlook.com
+- LinkedIn: [linkedin.com/in/mitchell-hess](https://www.linkedin.com/in/mitchell-hess/)
+- GitHub: [github.com/Mitchell-Hess](https://github.com/Mitchell-Hess)
