@@ -29,7 +29,7 @@ export default function Education() {
   return (
     <motion.section
       id="education"
-      className="relative py-20 sm:py-32 bg-gradient-to-br from-blue-50/30 to-purple-50/30 dark:from-slate-900 dark:to-slate-800 overflow-hidden"
+      className="relative py-20 sm:py-32 bg-gradient-to-br from-blue-50/30 to-purple-50/30 dark:from-slate-900 dark:to-slate-800"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

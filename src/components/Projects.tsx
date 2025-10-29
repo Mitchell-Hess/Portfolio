@@ -4,7 +4,7 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className="relative py-20 sm:py-32 bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-slate-800 dark:to-slate-900 overflow-hidden"
+      className="relative py-20 sm:py-32 bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-slate-800 dark:to-slate-900"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

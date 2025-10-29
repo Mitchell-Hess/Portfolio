@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="relative py-20 sm:py-32 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white overflow-hidden"
+      className="relative py-20 sm:py-32 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

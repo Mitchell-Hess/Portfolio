@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
+      className="relative py-40 sm:py-48 md:py-56 flex flex-col justify-center items-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
     >
       {/* Animated background gradient orbs - hidden on mobile for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">

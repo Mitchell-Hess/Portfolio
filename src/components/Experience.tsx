@@ -38,7 +38,7 @@ export default function Experience() {
   return (
     <motion.section
       id="experience"
-      className="relative py-20 sm:py-32 bg-white dark:bg-slate-900 overflow-hidden"
+      className="relative py-20 sm:py-32 bg-white dark:bg-slate-900"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
