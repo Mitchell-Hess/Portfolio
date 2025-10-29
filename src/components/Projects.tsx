@@ -64,8 +64,7 @@ export default function Projects() {
                     ScoutMaster
                   </h3>
                   <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                    A mobile app that lets users discover the filming locations of their favorite movies and TV shows. Built with React Native and
-                    Firebase.
+                    A mobile app that helps you find and visit the real world locations where your favorite movies and TV shows were filmed. Explore interactive maps, get directions, and discover behind the scenes details about iconic filming spots. Perfect for movie buffs and travelers looking to experience cinema in a whole new way.
                   </p>
                 </div>
 

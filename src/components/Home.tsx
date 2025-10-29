@@ -80,7 +80,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Passionate about building scalable, data-driven applications that make a real impact.
+            I build full stack applications that combine clean code with thoughtful design. Whether it's creating intuitive user interfaces or optimizing backend systems, I focus on writing software that's both functional and maintainable.
           </motion.p>
 
           <motion.div
