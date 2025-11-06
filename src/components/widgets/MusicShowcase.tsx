@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { getArtists, formatFollowerCount } from "../../services/spotifyService";
 
 interface Band {
   name: string;
@@ -9,6 +10,7 @@ interface Band {
   label: string;
   gradient: string;
   listeners: string;
+  artistId: string;
 }
 
 export default function MusicShowcase() {
@@ -20,7 +22,8 @@ export default function MusicShowcase() {
       imageUrl: "https://i.scdn.co/image/ab6761610000e5ebc4f72407be5d96db73982400",
       label: "Favorite Artist",
       gradient: "from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20",
-      listeners: "Loading..."
+      listeners: "Loading...",
+      artistId: "5NXHXK6hOCotCF8lvGM1I0"
     },
     {
       name: "eileen",
@@ -29,29 +32,24 @@ export default function MusicShowcase() {
       imageUrl: "https://i.scdn.co/image/ab6761610000e5eb99e1599041a2ffc616e9dc51",
       label: "My Band",
       gradient: "from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20",
-      listeners: "Loading..."
+      listeners: "Loading...",
+      artistId: "28O4ZcWP2mGQ6KL371BaHR"
     },
   ]);
   const [loading] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(new Date());
 
   useEffect(() => {
-    // Fetch listener counts from Spotify embed pages (no auth needed)
     const fetchListenerCounts = async () => {
       try {
-        const artistIds = ['5NXHXK6hOCotCF8lvGM1I0', '28O4ZcWP2mGQ6KL371BaHR'];
-        const promises = artistIds.map(async (id) => {
-          const response = await fetch(`https://open.spotify.com/oembed?url=spotify:artist:${id}`);
-          const data = await response.json();
-          // Parse listener count from title or use a fallback
-          return data;
-        });
-
-        await Promise.all(promises);
+        const artistIds = bands.map(band => band.artistId);
+        const artists = await getArtists(artistIds);
 
         setBands(prev => prev.map((band, index) => ({
           ...band,
-          listeners: index === 0 ? "533.9K" : "111" // Use actual counts from your manual check
+          listeners: artists[index]
+            ? formatFollowerCount(artists[index].followers.total)
+            : "N/A"
         })));
 
         setLastUpdated(new Date());
@@ -60,17 +58,15 @@ export default function MusicShowcase() {
         // Fallback to static counts if fetch fails
         setBands(prev => prev.map((band, index) => ({
           ...band,
-          listeners: index === 0 ? "533.9K" : "111"
+          listeners: index === 0 ? "Loading" : "Loading"
         })));
       }
     };
 
     fetchListenerCounts();
 
-    // Update timestamp every minute
-    const interval = setInterval(() => {
-      setLastUpdated(new Date());
-    }, 60000);
+    // Refresh every 10 minutes (600000ms)
+    const interval = setInterval(fetchListenerCounts, 600000);
 
     return () => clearInterval(interval);
   }, []);
@@ -170,7 +166,7 @@ export default function MusicShowcase() {
                   <svg className="w-3 h-3 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
                   </svg>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">{band.listeners} monthly listeners</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{band.listeners} followers</span>
                 </div>
               </div>
 

@@ -47,7 +47,7 @@ export default function About() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
               <img
-                src="/assets/profile_image.jpg"
+                src="/assets/profile_image.JPG"
                 alt="Mitchell Hess"
                 className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full object-cover shadow-2xl border-4 border-white dark:border-slate-800"
               />
