@@ -9,8 +9,9 @@ export default function Experience() {
       period: "Jul 2024 to Present",
       details: [
         "Created a Python framework that validates data quality across pipelines, which the team adopted company-wide for consistency. It automatically flags issues and generates reports, saving hours of manual checks.",
-        "Reworked pipeline logic to run tasks in parallel instead of sequentially, cutting processing time by 30%. The speedup was especially noticeable during peak load periods.",
-        "Worked with DevOps to containerize the framework with Docker and deploy it on AWS using Rancher, making it easier to scale as data volumes grew.",
+        "Improved pipeline efficiency by 30% through parallelized error detection and optimized reporting logic, making data processing significantly faster during peak periods.",
+        "Collaborated with engineering and DevOps teams to deliver scalable Azure and Docker deployments, boosting system uptime and data reliability across the platform.",
+        "Worked closely with business teams to develop new features that surface key insights on market share and other critical metrics, helping stakeholders make data-driven decisions.",
       ],
     },
     {
