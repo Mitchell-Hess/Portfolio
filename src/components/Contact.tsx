@@ -73,7 +73,7 @@ export default function Contact() {
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h2
-          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -83,7 +83,7 @@ export default function Contact() {
         </motion.h2>
 
         <motion.p
-          className="text-xl sm:text-2xl mb-16 max-w-3xl mx-auto text-white/90"
+          className="text-xl sm:text-2xl mb-16 max-w-3xl mx-auto text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -111,10 +111,10 @@ export default function Contact() {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="relative space-y-4">
-                <div className="mb-4 flex justify-center">{method.icon}</div>
-                <h3 className="text-2xl font-bold">{method.name}</h3>
-                <p className="text-white/80 text-sm break-all">{method.label}</p>
-                <div className="flex items-center justify-center gap-2 text-sm font-semibold">
+                <div className="mb-4 flex justify-center text-white">{method.icon}</div>
+                <h3 className="text-2xl font-bold text-white">{method.name}</h3>
+                <p className="text-white text-sm break-all">{method.label}</p>
+                <div className="flex items-center justify-center gap-2 text-sm font-semibold text-white">
                   <span>Connect</span>
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -133,7 +133,7 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p className="text-white/70 text-sm sm:text-base">
+          <p className="text-white text-sm sm:text-base">
             © 2025 Mitchell Hess. Built with React, TypeScript, and Tailwind CSS.
           </p>
         </motion.div>
