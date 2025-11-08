@@ -49,10 +49,12 @@ export default function Projects() {
               >
                 <div className="relative group/logo">
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-25 group-hover/logo:opacity-75 transition"></div>
-                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 shadow-xl border-4 border-white dark:border-slate-800 flex items-center justify-center">
-                    <svg className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                    </svg>
+                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-full bg-gradient-to-br from-blue-200 to-purple-200 dark:from-blue-900 dark:to-purple-900 shadow-xl border-4 border-white dark:border-slate-800 flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/assets/applysimple_logo.svg"
+                      alt="ApplySimple logo"
+                      className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain"
+                    />
                   </div>
                 </div>
               </motion.div>
