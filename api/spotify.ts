@@ -11,8 +11,18 @@ interface SpotifyToken {
   expires_in: number;
 }
 
+interface CachedData {
+  data: unknown;
+  expiry: number;
+}
+
 let cachedToken: string | null = null;
 let tokenExpiry: number = 0;
+const cachedArtistData: Map<string, CachedData> = new Map();
+
+// Rate limiting map
+const rateLimitMap = new Map<string, number[]>();
+const MAX_REQUESTS_PER_MINUTE = 30;
 
 /**
  * Get Spotify access token using Client Credentials flow
@@ -53,14 +63,57 @@ async function getAccessToken(): Promise<string> {
 }
 
 /**
+ * Check if request is rate limited
+ */
+function isRateLimited(clientId: string): boolean {
+  const now = Date.now();
+  const requests = rateLimitMap.get(clientId) || [];
+
+  // Remove requests older than 1 minute
+  const recentRequests = requests.filter(time => now - time < 60000);
+
+  if (recentRequests.length >= MAX_REQUESTS_PER_MINUTE) {
+    return true;
+  }
+
+  recentRequests.push(now);
+  rateLimitMap.set(clientId, recentRequests);
+  return false;
+}
+
+/**
+ * Get client identifier for rate limiting
+ */
+function getClientId(req: VercelRequest): string {
+  const forwarded = req.headers['x-forwarded-for'];
+  const ip = typeof forwarded === 'string' ? forwarded.split(',')[0] : req.socket?.remoteAddress || 'unknown';
+  return ip;
+}
+
+/**
  * Serverless function handler
  */
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
 ) {
-  // Enable CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // Security headers
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+
+  // Enable CORS for your domain only
+  const origin = req.headers.origin;
+  const allowedOrigins = [
+    'https://mitchellhess.com',
+    'https://www.mitchellhess.com',
+    'http://localhost:5173',
+    'http://localhost:3000'
+  ];
+
+  if (origin && allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -72,11 +125,39 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
+  // Rate limiting
+  const clientId = getClientId(req);
+  if (isRateLimited(clientId)) {
+    return res.status(429).json({
+      error: 'Too many requests',
+      message: 'Rate limit exceeded. Please try again later.'
+    });
+  }
+
   try {
     const { artistIds } = req.query;
 
     if (!artistIds || typeof artistIds !== 'string') {
       return res.status(400).json({ error: 'artistIds parameter is required' });
+    }
+
+    // Input validation - prevent injection attacks
+    if (!/^[a-zA-Z0-9,]+$/.test(artistIds)) {
+      return res.status(400).json({ error: 'Invalid artistIds format' });
+    }
+
+    // Limit number of artists to prevent abuse
+    const artistIdArray = artistIds.split(',');
+    if (artistIdArray.length > 10) {
+      return res.status(400).json({ error: 'Maximum 10 artists allowed per request' });
+    }
+
+    // Check cache first (5 minute cache)
+    const cacheKey = artistIds;
+    const cached = cachedArtistData.get(cacheKey);
+    if (cached && Date.now() < cached.expiry) {
+      res.setHeader('X-Cache', 'HIT');
+      return res.status(200).json(cached.data);
     }
 
     const token = await getAccessToken();
@@ -96,6 +177,21 @@ export default async function handler(
 
     const data = await response.json();
 
+    // Cache the response for 5 minutes
+    cachedArtistData.set(cacheKey, {
+      data,
+      expiry: Date.now() + 300000,
+    });
+
+    // Clean up old cache entries
+    if (cachedArtistData.size > 100) {
+      const oldestKey = cachedArtistData.keys().next().value;
+      if (oldestKey) {
+        cachedArtistData.delete(oldestKey);
+      }
+    }
+
+    res.setHeader('X-Cache', 'MISS');
     return res.status(200).json(data);
   } catch (error) {
     console.error('Spotify API error:', error);

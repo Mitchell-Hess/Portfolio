@@ -69,6 +69,7 @@ export default function MusicShowcase() {
     const interval = setInterval(fetchListenerCounts, 600000);
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getTimeAgo = () => {

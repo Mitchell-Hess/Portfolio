@@ -95,6 +95,7 @@ export async function getGuardiansGames(season: number = new Date().getFullYear(
 
       // Combine and remove internal properties
       const combinedGames = [...recentGames, ...upcomingGames];
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       return combinedGames.map(({ gameDate, state, ...game }) => game);
     }
 
