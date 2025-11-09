@@ -68,9 +68,9 @@ export default function Education() {
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
-              <div className="relative flex flex-col items-start gap-6">
+              <div className="relative flex flex-col sm:flex-row items-start gap-6">
                 <motion.div
-                  className="flex-shrink-0 mx-auto sm:mx-0"
+                  className="flex-shrink-0"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >

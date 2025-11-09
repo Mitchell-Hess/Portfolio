@@ -66,20 +66,21 @@ export default function Projects() {
                     ApplySimple
                   </h3>
                   <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                    A modern full-stack web application that transforms your job application tracking into an intelligent analytics dashboard with ML-powered outcome predictions. Track applications, analyze trends, and get AI predictions on your success probability.
+                    A modern full-stack job application tracker with AI-powered insights to optimize your job search strategy. Features smart analytics dashboards with interactive charts, ML-powered success predictions, secure authentication with password reset, CSV bulk import, and beautiful dark mode support.
                   </p>
                 </div>
 
                 {/* Development Process */}
                 <div>
                   <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wider">
-                    Development Process
+                    Key Features & Development
                   </h4>
                   <ul className="text-base text-gray-600 dark:text-gray-400 space-y-1">
-                    <li>• Built full-stack app with Next.js 16 (App Router) and React 19</li>
-                    <li>• Developed FastAPI ML microservice for job outcome predictions</li>
-                    <li>• Designed PostgreSQL database with Prisma ORM for data management</li>
-                    <li>• Implemented real-time analytics dashboard with Recharts visualizations</li>
+                    <li>• Built full-stack app with Next.js 15 (App Router) and React 19</li>
+                    <li>• Developed FastAPI ML microservice for success probability predictions</li>
+                    <li>• Designed PostgreSQL 16 database with Prisma ORM for data management</li>
+                    <li>• Implemented secure authentication with NextAuth.js and email password reset via Resend</li>
+                    <li>• Created interactive analytics dashboard with Recharts visualizations and ML insights</li>
                   </ul>
                 </div>
 
@@ -89,7 +90,7 @@ export default function Projects() {
                     Tech Stack
                   </h4>
                   <div className="flex flex-wrap justify-center md:justify-start gap-2">
-                    {["Next.js 16", "React 19", "FastAPI", "PostgreSQL", "Prisma", "Chakra UI v3"].map((tech) => (
+                    {["Next.js 15", "React 19", "TypeScript 5", "PostgreSQL 16", "Prisma", "FastAPI", "NextAuth.js", "Chakra UI v3", "Recharts"].map((tech) => (
                       <motion.span
                         key={tech}
                         whileHover={{ scale: 1.1, y: -2 }}
