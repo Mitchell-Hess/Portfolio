@@ -63,10 +63,11 @@
     },
     "portfolio": {
       "name": "Interaktives Portfolio",
-      "description": "Diese Portfolio-Website (ja, die, die Sie gerade ansehen... ziemlich meta, ich weiß). Erstellt mit einem benutzerdefinierten Cursor, der Ihnen folgt, und einem Gradienteneffekt, der sich mit Ihrer Maus bewegt. Enthält flüssige Animationen, Darkmode-Unterstützung und Live-API-Integrationen, die Daten von Spotify und MLB abrufen.",
+      "description": "Diese Portfolio-Website (ja, die, die Sie gerade ansehen... ziemlich meta, ich weiß). Erstellt mit einem benutzerdefinierten Cursor, der Ihnen folgt, und einem Gradienteneffekt, der sich mit Ihrer Maus bewegt. Bietet mehrsprachige Unterstützung für 10 Sprachen, flüssige Animationen, Darkmode und Live-API-Integrationen, die Daten von Spotify und MLB abrufen.",
       "techStackDeployment": "Tech Stack & Bereitstellung",
       "developmentHighlights": "Entwicklungs-Highlights",
       "highlights": [
+        "Mehrsprachige Unterstützung (i18n) für 10 Sprachen mit Browser-Erkennung und persistenten Einstellungen",
         "Benutzerdefinierter Cursor mit Hover-Effekten (auf Mobilgeräten ausgeblendet)",
         "Dynamischer Gradienten-Spotlight, der Ihre Maus verfolgt",
         "Dockerisiert mit automatisiertem CI/CD für einfache Bereitstellung",

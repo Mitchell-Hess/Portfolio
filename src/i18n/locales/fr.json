@@ -63,10 +63,11 @@
     },
     "portfolio": {
       "name": "Portfolio Interactif",
-      "description": "Ce site portfolio (oui, celui que vous regardez en ce moment... assez méta, je sais). Construit avec un curseur personnalisé qui vous suit et un effet de dégradé qui se déplace avec votre souris. Comprend des animations fluides, un support du mode sombre et des intégrations API en direct extrayant des données de Spotify et MLB.",
+      "description": "Ce site portfolio (oui, celui que vous regardez en ce moment... assez méta, je sais). Construit avec un curseur personnalisé qui vous suit et un effet de dégradé qui se déplace avec votre souris. Propose un support multilingue pour 10 langues, des animations fluides, un mode sombre et des intégrations API en direct extrayant des données de Spotify et MLB.",
       "techStackDeployment": "Stack Technologique et Déploiement",
       "developmentHighlights": "Points Forts du Développement",
       "highlights": [
+        "Support multilingue (i18n) pour 10 langues avec détection du navigateur et préférences persistantes",
         "Curseur personnalisé avec effets de survol (masqué sur les appareils mobiles)",
         "Projecteur de dégradé dynamique qui suit votre souris",
         "Dockerisé avec CI/CD automatisé pour un déploiement facile",

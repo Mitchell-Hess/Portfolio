@@ -4,6 +4,10 @@ A modern, responsive portfolio website showcasing my work as a Full-Stack Softwa
 
 ## Features
 
+- **Multi-language Support**: Internationalization (i18n) support for 10 languages with browser detection and language switcher
+  - English, 中文 (Chinese), Español (Spanish), हिन्दी (Hindi), Français (French), العربية (Arabic), Português (Portuguese), Русский (Russian), 日本語 (Japanese), Deutsch (German)
+  - Persistent language preference in localStorage
+  - Native language names in UI for better UX
 - **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
 - **Dark/Light Mode**: Theme toggle with smooth transitions and persistent user preferences
 - **Custom Cursor**: Interactive gradient cursor with hover effects and scale animations (desktop only, hidden on mobile)
@@ -20,6 +24,7 @@ A modern, responsive portfolio website showcasing my work as a Full-Stack Softwa
 - **Build Tool**: Vite 7
 - **Styling**: Tailwind CSS 4
 - **Animations**: Framer Motion 12
+- **Internationalization**: react-i18next + i18next
 - **Fonts**: Inter (via @fontsource)
 - **Icons**: Custom SVG icons
 - **APIs**: Spotify Web API, MLB Stats API
@@ -79,6 +84,19 @@ portfolio/
 │   │   ├── Home.tsx
 │   │   ├── Navbar.tsx
 │   │   └── Projects.tsx
+│   ├── i18n/                   # Internationalization
+│   │   ├── locales/            # Translation files (10 languages)
+│   │   │   ├── en.json
+│   │   │   ├── zh.json
+│   │   │   ├── es.json
+│   │   │   ├── hi.json
+│   │   │   ├── fr.json
+│   │   │   ├── ar.json
+│   │   │   ├── pt.json
+│   │   │   ├── ru.json
+│   │   │   ├── ja.json
+│   │   │   └── de.json
+│   │   └── config.ts           # i18n configuration
 │   ├── services/               # API services
 │   │   └── spotifyService.ts   # Spotify API integration
 │   ├── App.tsx                 # Root component
@@ -92,6 +110,14 @@ portfolio/
 ```
 
 ## Features in Detail
+
+### Multi-language Support
+- Automatic browser language detection with fallback to English
+- 10 supported languages with complete translations
+- Language switcher with native language names in dropdown
+- Persistent language preference across sessions
+- All UI text, descriptions, and labels translate dynamically
+- Names (personal, technologies, bands) remain untranslated for consistency
 
 ### Custom Cursor
 - Gradient design with white border for maximum visibility
@@ -113,12 +139,14 @@ portfolio/
 - Auto-refreshes every 10 minutes
 - Animated cards with hover effects and gradient accents
 - Links directly to artist Spotify pages
+- Fully translatable widget text
 
 #### Guardians Tracker
 - Shows latest Cleveland Guardians game results
 - Displays current season statistics
 - Fetches live data from MLB Stats API
 - Real-time game status indicators
+- Fully translatable widget text
 
 ### Performance Optimizations
 - Code splitting for optimal bundle sizes
@@ -148,6 +176,24 @@ The serverless function at `/api/spotify.ts` will automatically be deployed and 
 Can also be deployed to:
 - Netlify (with serverless functions)
 - Any static hosting service (note: Spotify API integration will not work without serverless function support)
+
+## Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Create production build
+npm run preview      # Preview production build locally
+npm run lint         # Run ESLint
+```
+
+## Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+```
 
 ## License
 

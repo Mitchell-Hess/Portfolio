@@ -63,10 +63,11 @@
     },
     "portfolio": {
       "name": "Portfólio Interativo",
-      "description": "Este site de portfólio (sim, o que você está vendo agora... bem meta, eu sei). Construído com um cursor personalizado que te segue e um efeito de gradiente que se move com o mouse. Inclui animações suaves, suporte ao modo escuro e integrações de API ao vivo extraindo dados do Spotify e MLB.",
+      "description": "Este site de portfólio (sim, o que você está vendo agora... bem meta, eu sei). Construído com um cursor personalizado que te segue e um efeito de gradiente que se move com o mouse. Apresenta suporte multilíngue para 10 idiomas, animações suaves, modo escuro e integrações de API ao vivo extraindo dados do Spotify e MLB.",
       "techStackDeployment": "Stack Tecnológica e Implantação",
       "developmentHighlights": "Destaques do Desenvolvimento",
       "highlights": [
+        "Suporte multilíngue (i18n) para 10 idiomas com detecção de navegador e preferências persistentes",
         "Cursor personalizado com efeitos de hover (oculto em dispositivos móveis)",
         "Holofote de gradiente dinâmico que rastreia seu mouse",
         "Dockerizado com CI/CD automatizado para implantação fácil",

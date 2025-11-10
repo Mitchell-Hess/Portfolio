@@ -63,10 +63,11 @@
     },
     "portfolio": {
       "name": "Interactive Portfolio",
-      "description": "This portfolio site (yes, the one you're looking at right now... pretty meta, I know). Built with a custom cursor that follows you around and a gradient effect that moves with your mouse. Includes smooth animations, dark mode support, and live API integrations pulling data from Spotify and MLB.",
+      "description": "This portfolio site (yes, the one you're looking at right now... pretty meta, I know). Built with a custom cursor that follows you around and a gradient effect that moves with your mouse. Features multi-language support for 10 languages, smooth animations, dark mode, and live API integrations pulling data from Spotify and MLB.",
       "techStackDeployment": "Tech Stack & Deployment",
       "developmentHighlights": "Development Highlights",
       "highlights": [
+        "Multi-language support (i18n) for 10 languages with browser detection and persistent preferences",
         "Custom cursor with hover effects (hides on mobile devices)",
         "Dynamic gradient spotlight that tracks your mouse",
         "Dockerized with automated CI/CD for easy deployment",
