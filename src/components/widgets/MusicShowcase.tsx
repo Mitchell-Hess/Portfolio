@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { getArtists, formatFollowerCount } from "../../services/spotifyService";
+import { useTranslation } from "react-i18next";
 
 interface Band {
   name: string;
@@ -14,52 +15,56 @@ interface Band {
 }
 
 export default function MusicShowcase() {
-  const [bands, setBands] = useState<Band[]>([
+  const { t } = useTranslation();
+  const [listenerCounts, setListenerCounts] = useState<{[key: string]: string}>({
+    "5NXHXK6hOCotCF8lvGM1I0": "Loading...",
+    "28O4ZcWP2mGQ6KL371BaHR": "Loading..."
+  });
+  const [loading] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(new Date());
+
+  // Compute bands dynamically based on current language
+  const bands: Band[] = [
     {
       name: "Porcupine Tree",
-      description: "Progressive Rock Legends",
+      description: t('widgets.music.progressiveRock'),
       spotifyUrl: "https://open.spotify.com/artist/5NXHXK6hOCotCF8lvGM1I0",
       imageUrl: "https://i.scdn.co/image/ab6761610000e5ebc4f72407be5d96db73982400",
-      label: "Favorite Artist",
+      label: t('widgets.music.favoriteArtist'),
       gradient: "from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20",
-      listeners: "Loading...",
+      listeners: listenerCounts["5NXHXK6hOCotCF8lvGM1I0"],
       artistId: "5NXHXK6hOCotCF8lvGM1I0"
     },
     {
       name: "eileen",
-      description: "Check out our music!",
+      description: t('widgets.music.checkOut'),
       spotifyUrl: "https://open.spotify.com/artist/28O4ZcWP2mGQ6KL371BaHR",
       imageUrl: "https://i.scdn.co/image/ab6761610000e5eb99e1599041a2ffc616e9dc51",
-      label: "My Band",
+      label: t('widgets.music.myBand'),
       gradient: "from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20",
-      listeners: "Loading...",
+      listeners: listenerCounts["28O4ZcWP2mGQ6KL371BaHR"],
       artistId: "28O4ZcWP2mGQ6KL371BaHR"
     },
-  ]);
-  const [loading] = useState(false);
-  const [lastUpdated, setLastUpdated] = useState(new Date());
+  ];
 
   useEffect(() => {
     const fetchListenerCounts = async () => {
       try {
-        const artistIds = bands.map(band => band.artistId);
+        const artistIds = ["5NXHXK6hOCotCF8lvGM1I0", "28O4ZcWP2mGQ6KL371BaHR"];
         const artists = await getArtists(artistIds);
 
-        setBands(prev => prev.map((band, index) => ({
-          ...band,
-          listeners: artists[index]
+        const newCounts: {[key: string]: string} = {};
+        artistIds.forEach((id, index) => {
+          newCounts[id] = artists[index]
             ? formatFollowerCount(artists[index].followers.total)
-            : "N/A"
-        })));
+            : "N/A";
+        });
 
+        setListenerCounts(newCounts);
         setLastUpdated(new Date());
       } catch (error) {
         console.error('Error fetching listener counts:', error);
-        // Fallback to static counts if fetch fails
-        setBands(prev => prev.map((band, index) => ({
-          ...band,
-          listeners: index === 0 ? "Loading" : "Loading"
-        })));
+        // Keep existing counts on error
       }
     };
 
@@ -69,7 +74,6 @@ export default function MusicShowcase() {
     const interval = setInterval(fetchListenerCounts, 600000);
 
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getTimeAgo = () => {
@@ -108,10 +112,10 @@ export default function MusicShowcase() {
           </div>
           <div>
             <h4 className="font-bold text-gray-900 dark:text-gray-100">
-              Music I Love
+              {t('widgets.music.title')}
             </h4>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Highlighted Artists
+              {t('widgets.music.subtitle')}
             </p>
           </div>
         </div>
@@ -121,7 +125,7 @@ export default function MusicShowcase() {
             transition={{ duration: 2, repeat: Infinity }}
             className="w-2 h-2 bg-green-500 rounded-full"
           />
-          <span>Live</span>
+          <span>{t('widgets.music.live')}</span>
         </div>
       </div>
 
@@ -167,7 +171,7 @@ export default function MusicShowcase() {
                   <svg className="w-3 h-3 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
                   </svg>
-                  <span className="text-xs text-gray-500 dark:text-gray-400">{band.listeners} followers</span>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">{band.listeners} {t('widgets.music.monthlyListeners')}</span>
                 </div>
               </div>
 
@@ -192,9 +196,9 @@ export default function MusicShowcase() {
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
             </svg>
-            Listen on Spotify
+            {t('widgets.music.listenSpotify')}
           </a>
-          <span className="text-[10px]">Updated {getTimeAgo()}</span>
+          <span className="text-[10px]">{t('widgets.music.lastUpdated')} {getTimeAgo()}</span>
         </div>
       </div>
     </div>

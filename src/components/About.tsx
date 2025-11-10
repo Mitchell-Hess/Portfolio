@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import MusicShowcase from "./widgets/MusicShowcase";
 import GuardiansTracker from "./widgets/GuardiansTracker";
 
 export default function About() {
+  const { t } = useTranslation();
+
   const skills = [
-    { name: "React & TypeScript", icon: "⚛️" },
-    { name: "Python & ML", icon: "🐍" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "AWS & Docker", icon: "☁️" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "Git & CI/CD", icon: "git" },
+    { name: t('about.skills.react'), icon: "⚛️" },
+    { name: t('about.skills.python'), icon: "🐍" },
+    { name: t('about.skills.node'), icon: "🟢" },
+    { name: t('about.skills.aws'), icon: "☁️" },
+    { name: t('about.skills.postgres'), icon: "🐘" },
+    { name: t('about.skills.git'), icon: "git" },
   ];
 
   return (
@@ -32,7 +35,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          About Me
+          {t('about.title')}
         </motion.h2>
 
         <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
@@ -63,12 +66,8 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="space-y-6"
             >
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                I'm a <span className="font-semibold text-blue-600 dark:text-blue-400">Software Engineer / Data Scientist</span> at <span className="font-semibold">PepsiCo</span>, where I build data quality frameworks and optimize pipelines to help teams work more efficiently. Most of my day is spent in Python and Databricks, trying to make complicated things simple.
-              </p>
-              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-                When I'm not coding, I'm usually playing guitar in my band <span className="font-semibold text-purple-600 dark:text-purple-400">eileen</span>, climbing at the gym, or watching the Guardians lose in heartbreaking fashion. I tend to dive deep into whatever I'm interested in at the moment.
-              </p>
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300" dangerouslySetInnerHTML={{ __html: t('about.paragraph1') }} />
+              <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300" dangerouslySetInnerHTML={{ __html: t('about.paragraph2') }} />
             </motion.div>
 
             {/* Skills */}
@@ -80,7 +79,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                Technologies I work with
+                {t('about.technologiesTitle')}
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {skills.map((skill, index) => (
@@ -122,7 +121,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center text-gray-800 dark:text-gray-200">
-            What I'm Into Right Now
+            {t('about.whatImInto')}
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             <MusicShowcase />

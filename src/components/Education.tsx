@@ -1,30 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Education() {
-  const education = [
-    {
-      degree: "M.S. Computer Science",
-      school: "University of North Texas",
-      logo: "/assets/northtexas_logo.jpg",
-      date: "Expected May 2026",
-      bullets: [
-        "Highlighted Courses: Software Development for AI, Usability Testing in Software Engineering, Analysis of Computer Algorithms",
-        "GPA: 4.0",
-      ],
-    },
-    {
-      degree: "B.S. Computer Science",
-      school: "University of North Texas",
-      logo: "/assets/northtexas_logo.jpg",
-      date: "May 2024",
-      bullets: [
-        "Minor in Mathematics",
-        "Awarded the CSCE Undergrduate Cybersecurity Certificate",
-        "Member of the Guitar Club",
-        "Magna Cum Laude"
-      ],
-    },
-  ];
+  const { t } = useTranslation();
+  const education = t('education.degrees', { returnObjects: true }) as any[];
 
   return (
     <motion.section
@@ -43,7 +22,7 @@ export default function Education() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Education
+          {t('education.title')}
         </motion.h2>
         <motion.p
           className="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto text-lg"
@@ -52,7 +31,7 @@ export default function Education() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Academic foundation in Computer Science and Software Engineering
+          {t('education.subtitle')}
         </motion.p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
@@ -101,7 +80,7 @@ export default function Education() {
                   </div>
 
                   <ul className="space-y-2">
-                    {ed.bullets.map((b, j) => (
+                    {ed.bullets.map((b: any, j: number) => (
                       <motion.li
                         key={j}
                         initial={{ opacity: 0, x: -10 }}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getGuardiansGames, getGuardiansRecord } from "../../utils/mlb";
+import { useTranslation } from "react-i18next";
 
 interface Game {
   date: string;
@@ -11,6 +12,7 @@ interface Game {
 }
 
 export default function GuardiansTracker() {
+  const { t } = useTranslation();
   const [games, setGames] = useState<Game[]>([]);
   const [record, setRecord] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -68,10 +70,10 @@ export default function GuardiansTracker() {
           </svg>
           <div>
             <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Unable to load games
+              {t('widgets.guardians.unableToLoad')}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Check back later!
+              {t('widgets.guardians.checkBackLater')}
             </p>
           </div>
         </div>
@@ -96,7 +98,7 @@ export default function GuardiansTracker() {
               Cleveland Guardians
             </h4>
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Recent & Upcoming Games
+              {t('widgets.guardians.recentAndUpcoming')}
             </p>
           </div>
         </div>
@@ -106,7 +108,7 @@ export default function GuardiansTracker() {
             transition={{ duration: 2, repeat: Infinity }}
             className="w-2 h-2 bg-blue-500 rounded-full"
           />
-          <span>Live</span>
+          <span>{t('widgets.guardians.live')}</span>
         </div>
       </div>
 
@@ -115,12 +117,12 @@ export default function GuardiansTracker() {
         <div className="mb-4 p-3 bg-gradient-to-r from-red-50 to-blue-50 dark:from-red-900/20 dark:to-blue-900/20 rounded-xl border border-red-200/50 dark:border-red-800/50">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">2024 Season Record</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">{t('widgets.guardians.seasonRecord')}</p>
               <p className="text-2xl font-bold text-gray-900 dark:text-gray-100">{record}</p>
             </div>
             <div className="text-right">
-              <p className="text-xs text-gray-500 dark:text-gray-400">Division</p>
-              <p className="text-sm font-bold text-blue-600 dark:text-blue-400">AL Central</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">{t('widgets.guardians.division')}</p>
+              <p className="text-sm font-bold text-blue-600 dark:text-blue-400">{t('widgets.guardians.alCentral')}</p>
             </div>
           </div>
         </div>
@@ -131,10 +133,10 @@ export default function GuardiansTracker() {
         {games.length === 0 ? (
           <div className="p-4 bg-white dark:bg-slate-800 rounded-xl border border-gray-200 dark:border-slate-700 text-center">
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Off-season - No games scheduled
+              {t('widgets.guardians.offSeason')}
             </p>
             <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
-              Check back during baseball season!
+              {t('widgets.guardians.checkBackSeason')}
             </p>
           </div>
         ) : (
@@ -195,7 +197,7 @@ export default function GuardiansTracker() {
       {/* Footer */}
       <div className="mt-4 pt-3 border-t border-gray-200 dark:border-slate-700">
         <p className="text-xs text-center font-medium">
-          <span className="text-red-600">Go</span> <span className="text-blue-600">Guards!</span>
+          <span className="text-red-600">{t('widgets.guardians.go')}</span> <span className="text-blue-600">{t('widgets.guardians.guards')}</span>
         </p>
       </div>
     </div>

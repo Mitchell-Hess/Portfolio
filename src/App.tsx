@@ -7,6 +7,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import CustomCursor from "./components/CustomCursor";
 import DynamicGradientBackground from "./components/DynamicGradientBackground";
+import "./i18n/config";
 
 function App() {
   return (

@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "私について",
+    "projects": "プロジェクト",
+    "experience": "経験",
+    "education": "学歴",
+    "contact": "お問い合わせ"
+  },
+  "home": {
+    "greeting": "こんにちは、Mitchell Hess です",
+    "title": "フルスタック・ソフトウェアエンジニア",
+    "description": "PepsiCoでデータツールとフルスタックアプリケーションを構築しています。UIの改善であれ、バックエンドシステムの高速化であれ、物事をより良く機能させる方法を見つけることが好きです。",
+    "viewWork": "作品を見る",
+    "getInTouch": "お問い合わせ"
+  },
+  "about": {
+    "title": "私について",
+    "paragraph1": "私は<strong>PepsiCo</strong>の<strong>ソフトウェアエンジニア / データサイエンティスト</strong>です。データ品質フレームワークを構築し、パイプラインを最適化してチームがより効率的に作業できるようにしています。私の一日のほとんどはPythonとDatabricksで過ごし、複雑なことをシンプルにしようとしています。",
+    "paragraph2": "コーディングしていないときは、通常、バンド<strong>eileen</strong>でギターを弾いたり、ジムでクライミングをしたり、Guardiansが心を痛めるような形で負けるのを見たりしています。その時に興味があることに深く没頭する傾向があります。",
+    "technologiesTitle": "使用している技術",
+    "whatImInto": "今興味があること",
+    "skills": {
+      "react": "React & TypeScript",
+      "python": "Python & ML",
+      "node": "Node.js",
+      "aws": "AWS & Docker",
+      "postgres": "PostgreSQL",
+      "git": "Git & CI/CD"
+    }
+  },
+  "projects": {
+    "title": "注目のプロジェクト",
+    "subtitle": "新しい技術を試し、アイデアを実現するサイドプロジェクト",
+    "applySimple": {
+      "name": "ApplySimple",
+      "description": "求職戦略を最適化するAI搭載のインサイトを備えた、モダンなフルスタック求人応募トラッカー。インタラクティブなチャートを備えたスマート分析ダッシュボード、ML搭載の成功予測、パスワードリセット付きの安全な認証、CSVの一括インポート、美しいダークモードのサポートが特徴です。",
+      "keyFeatures": "主な機能と開発",
+      "features": [
+        "Next.js 15（App Router）とReact 19でフルスタックアプリを構築",
+        "成功確率予測のためのFastAPI MLマイクロサービスを開発",
+        "データ管理のためのPrisma ORMを使用したPostgreSQL 16データベースを設計",
+        "NextAuth.jsとResend経由のメールパスワードリセットで安全な認証を実装",
+        "RechartsのビジュアライゼーションとMLインサイトを使用したインタラクティブな分析ダッシュボードを作成"
+      ],
+      "techStack": "技術スタック",
+      "visitWebsite": "ウェブサイトを見る",
+      "viewGithub": "GitHubで見る"
+    },
+    "scoutMaster": {
+      "name": "ScoutMaster",
+      "description": "お気に入りの映画やテレビ番組が撮影された実際の場所を見つけて訪れるのに役立つモバイルアプリ。インタラクティブなマップを探索し、道順を取得し、象徴的な撮影場所の舞台裏の詳細を発見できます。",
+      "developmentProcess": "開発プロセス",
+      "process": [
+        "iOSとAndroid向けにReact Nativeでクロスプラットフォームモバイルアプリを構築",
+        "インタラクティブなロケーション探索のためにGoogle Maps APIを統合",
+        "撮影場所を管理するためにNode.jsとMongoDBでREST APIを設計",
+        "ユーザーアカウントと保存された場所のためにFirebase Authを実装"
+      ],
+      "techStack": "技術スタック",
+      "visitWebsite": "ウェブサイトを見る",
+      "appStore": "App Store"
+    },
+    "portfolio": {
+      "name": "インタラクティブポートフォリオ",
+      "description": "このポートフォリオサイト（はい、今見ているこのサイトです...かなりメタですね）。あなたを追いかけるカスタムカーソルと、マウスと一緒に動くグラデーション効果で構築されています。スムーズなアニメーション、ダークモードのサポート、SpotifyとMLBからデータを取得するライブAPI統合が含まれています。",
+      "techStackDeployment": "技術スタックとデプロイ",
+      "developmentHighlights": "開発のハイライト",
+      "highlights": [
+        "ホバー効果を備えたカスタムカーソル（モバイルデバイスでは非表示）",
+        "マウスを追跡する動的グラデーションスポットライト",
+        "簡単なデプロイのために自動化されたCI/CDを備えたDocker化",
+        "現在のSpotify再生とCleveland Guardiansの統計を表示するリアルタイムAPI統合"
+      ],
+      "viewGithub": "GitHubで見る"
+    }
+  },
+  "experience": {
+    "title": "経験",
+    "subtitle": "どこで働き、何を作ったか",
+    "positions": [
+      {
+        "role": "ソフトウェアエンジニア / データサイエンティスト",
+        "company": "PepsiCo, Inc.",
+        "period": "2024年7月〜現在",
+        "logo": "/assets/pepsico_logo.jpg",
+        "details": [
+          "パイプライン全体でデータ品質を検証するPythonフレームワークを作成し、チームが一貫性のために全社的に採用しました。問題を自動的にフラグし、レポートを生成し、手動チェックの時間を節約します。",
+          "並列エラー検出と最適化されたレポートロジックにより、パイプライン効率を30%向上させ、ピーク期間中のデータ処理を大幅に高速化しました。",
+          "エンジニアリングチームとDevOpsチームと協力して、スケーラブルなAzureとDockerのデプロイメントを提供し、プラットフォーム全体のシステムのアップタイムとデータの信頼性を向上させました。",
+          "ビジネスチームと密接に協力して、市場シェアやその他の重要な指標に関する主要なインサイトを表示する新機能を開発し、利害関係者がデータ駆動型の意思決定を行えるように支援しました。"
+        ]
+      },
+      {
+        "role": "データサイエンティストインターン",
+        "company": "PepsiCo, Inc.",
+        "period": "2023年5月〜2023年8月",
+        "details": [
+          "需要パターンを予測し、問題を引き起こす前にETLの問題を捉えるMLモデルを構築しました。これにより、エンジニアがデバッグに費やす時間が約40%削減されました。",
+          "データ品質メトリクスと予測を視覚化する自動化されたダッシュボードを設定し、チームがトレンドと異常を一目で確認できるようにしました。"
+        ],
+        "logo": "/assets/pepsico_logo.jpg"
+      },
+      {
+        "role": "ソフトウェア開発インターン",
+        "company": "Good Faith Energy",
+        "period": "2022年5月〜2022年8月",
+        "details": [
+          "Svelte、Node.js、PostgreSQLを使用して、顧客の入力と現在の価格データに基づいてリアルタイムの見積もりを生成するソーラー価格設定ツールを開発しました。",
+          "生成時間を20%削減するレスポンシブインターフェースを構築して見積もりワークフローを合理化し、営業チームがより迅速に取引を成立させるのを支援しました。"
+        ],
+        "logo": "/assets/good_faith_energy_logo.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "学歴",
+    "subtitle": "コンピューターサイエンスとソフトウェアエンジニアリングの学術的基盤",
+    "degrees": [
+      {
+        "degree": "コンピュータサイエンス修士",
+        "school": "ノーステキサス大学",
+        "date": "2026年5月予定",
+        "logo": "/assets/northtexas_logo.jpg",
+        "bullets": [
+          "注目コース：AIのためのソフトウェア開発、ソフトウェアエンジニアリングにおけるユーザビリティテスト、コンピュータアルゴリズムの分析",
+          "GPA: 4.0"
+        ]
+      },
+      {
+        "degree": "コンピュータサイエンス学士",
+        "school": "ノーステキサス大学",
+        "date": "2024年5月",
+        "bullets": [
+          "数学副専攻",
+          "CSCE学部サイバーセキュリティ証明書を授与",
+          "ギタークラブのメンバー",
+          "優等卒業生"
+        ],
+        "logo": "/assets/northtexas_logo.jpg"
+      }
+    ]
+  },
+  "widgets": {
+    "music": {
+      "title": "好きな音楽",
+      "subtitle": "注目アーティスト",
+      "live": "ライブ",
+      "listenSpotify": "Spotifyで聴く",
+      "progressiveRock": "プログレッシブロックの伝説",
+      "checkOut": "私たちの音楽を聴いてください！",
+      "favoriteArtist": "お気に入りのアーティスト",
+      "myBand": "私のバンド",
+      "monthlyListeners": "フォロワー",
+      "lastUpdated": "更新日時"
+    },
+    "guardians": {
+      "unableToLoad": "試合を読み込めません",
+      "checkBackLater": "後でもう一度お試しください！",
+      "recentAndUpcoming": "最近の試合と今後の試合",
+      "live": "ライブ",
+      "seasonRecord": "2024シーズン記録",
+      "division": "地区",
+      "alCentral": "アメリカンリーグ中地区",
+      "offSeason": "オフシーズン - 試合の予定はありません",
+      "checkBackSeason": "野球シーズン中にまたお越しください！",
+      "go": "頑張れ",
+      "guards": "ガーディアンズ！"
+    }
+  },
+  "contact": {
+    "title": "一緒に働きましょう",
+    "subtitle": "新しい機会と興味深いプロジェクトに対してオープンです。お気軽にお問い合わせください！",
+    "methods": {
+      "email": {
+        "name": "メール",
+        "label": "mitchell.hess@outlook.com"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "label": "linkedin.com/in/mitchell-hess"
+      },
+      "github": {
+        "name": "GitHub",
+        "label": "github.com/Mitchell-Hess"
+      }
+    },
+    "connect": "連絡する",
+    "footer": "© 2025 Mitchell Hess。React、TypeScript、Tailwind CSSで構築。"
+  }
+}

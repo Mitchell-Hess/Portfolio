@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "home",
+    "about": "about",
+    "projects": "projects",
+    "experience": "experience",
+    "education": "education",
+    "contact": "contact"
+  },
+  "home": {
+    "greeting": "Hi, I'm Mitchell Hess",
+    "title": "Full-Stack Software Engineer",
+    "description": "I work at PepsiCo building data tools and full-stack applications. I like figuring out how to make things work better, whether that's improving a UI or making backend systems run faster.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I'm a <strong>Software Engineer / Data Scientist</strong> at <strong>PepsiCo</strong>, where I build data quality frameworks and optimize pipelines to help teams work more efficiently. Most of my day is spent in Python and Databricks, trying to make complicated things simple.",
+    "paragraph2": "When I'm not coding, I'm usually playing guitar in my band <strong>eileen</strong>, climbing at the gym, or watching the Guardians lose in heartbreaking fashion. I tend to dive deep into whatever I'm interested in at the moment.",
+    "technologiesTitle": "Technologies I work with",
+    "whatImInto": "What I'm Into Right Now",
+    "skills": {
+      "react": "React & TypeScript",
+      "python": "Python & ML",
+      "node": "Node.js",
+      "aws": "AWS & Docker",
+      "postgres": "PostgreSQL",
+      "git": "Git & CI/CD"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Side projects where I experiment with new tech and bring ideas to life",
+    "applySimple": {
+      "name": "ApplySimple",
+      "description": "A modern full-stack job application tracker with AI-powered insights to optimize your job search strategy. Features smart analytics dashboards with interactive charts, ML-powered success predictions, secure authentication with password reset, CSV bulk import, and beautiful dark mode support.",
+      "keyFeatures": "Key Features & Development",
+      "features": [
+        "Built full-stack app with Next.js 15 (App Router) and React 19",
+        "Developed FastAPI ML microservice for success probability predictions",
+        "Designed PostgreSQL 16 database with Prisma ORM for data management",
+        "Implemented secure authentication with NextAuth.js and email password reset via Resend",
+        "Created interactive analytics dashboard with Recharts visualizations and ML insights"
+      ],
+      "techStack": "Tech Stack",
+      "visitWebsite": "Visit Website",
+      "viewGithub": "View on GitHub"
+    },
+    "scoutMaster": {
+      "name": "ScoutMaster",
+      "description": "A mobile app that helps you find and visit the real-world locations where your favorite movies and TV shows were filmed. Explore interactive maps, get directions, and discover behind-the-scenes details about iconic filming spots.",
+      "developmentProcess": "Development Process",
+      "process": [
+        "Built cross-platform mobile app with React Native for iOS and Android",
+        "Integrated Google Maps API for interactive location exploration",
+        "Designed REST API with Node.js and MongoDB to manage filming locations",
+        "Implemented Firebase Auth for user accounts and saved locations"
+      ],
+      "techStack": "Tech Stack",
+      "visitWebsite": "Visit Website",
+      "appStore": "App Store"
+    },
+    "portfolio": {
+      "name": "Interactive Portfolio",
+      "description": "This portfolio site (yes, the one you're looking at right now... pretty meta, I know). Built with a custom cursor that follows you around and a gradient effect that moves with your mouse. Includes smooth animations, dark mode support, and live API integrations pulling data from Spotify and MLB.",
+      "techStackDeployment": "Tech Stack & Deployment",
+      "developmentHighlights": "Development Highlights",
+      "highlights": [
+        "Custom cursor with hover effects (hides on mobile devices)",
+        "Dynamic gradient spotlight that tracks your mouse",
+        "Dockerized with automated CI/CD for easy deployment",
+        "Real-time API integrations showing current Spotify plays and Cleveland Guardians stats"
+      ],
+      "viewGithub": "View on GitHub"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "Where I've worked and what I've built",
+    "positions": [
+      {
+        "role": "Software Engineer / Data Scientist",
+        "company": "PepsiCo, Inc.",
+        "period": "Jul 2024 to Present",
+        "logo": "/assets/pepsico_logo.jpg",
+        "details": [
+          "Created a Python framework that validates data quality across pipelines, which the team adopted company-wide for consistency. It automatically flags issues and generates reports, saving hours of manual checks.",
+          "Improved pipeline efficiency by 30% through parallelized error detection and optimized reporting logic, making data processing significantly faster during peak periods.",
+          "Collaborated with engineering and DevOps teams to deliver scalable Azure and Docker deployments, boosting system uptime and data reliability across the platform.",
+          "Worked closely with business teams to develop new features that surface key insights on market share and other critical metrics, helping stakeholders make data-driven decisions."
+        ]
+      },
+      {
+        "role": "Data Scientist Intern",
+        "company": "PepsiCo, Inc.",
+        "period": "May 2023 to Aug 2023",
+        "logo": "/assets/pepsico_logo.jpg",
+        "details": [
+          "Built ML models that predict demand patterns and catch ETL issues before they cause problems. This reduced the time engineers spent debugging by about 40%.",
+          "Set up automated dashboards that visualize data quality metrics and forecasts, making it easier for the team to spot trends and anomalies at a glance."
+        ]
+      },
+      {
+        "role": "Software Development Intern",
+        "company": "Good Faith Energy",
+        "period": "May 2022 to Aug 2022",
+        "logo": "/assets/good_faith_energy_logo.jpg",
+        "details": [
+          "Developed a solar pricing tool using Svelte, Node.js, and PostgreSQL that generates real-time quotes based on customer inputs and current pricing data.",
+          "Streamlined the quoting workflow by building a responsive interface that cut generation time by 20%, helping the sales team close deals faster."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic foundation in Computer Science and Software Engineering",
+    "degrees": [
+      {
+        "degree": "M.S. Computer Science",
+        "school": "University of North Texas",
+        "date": "Expected May 2026",
+        "logo": "/assets/northtexas_logo.jpg",
+        "bullets": [
+          "Highlighted Courses: Software Development for AI, Usability Testing in Software Engineering, Analysis of Computer Algorithms",
+          "GPA: 4.0"
+        ]
+      },
+      {
+        "degree": "B.S. Computer Science",
+        "school": "University of North Texas",
+        "date": "May 2024",
+        "logo": "/assets/northtexas_logo.jpg",
+        "bullets": [
+          "Minor in Mathematics",
+          "Awarded the CSCE Undergrduate Cybersecurity Certificate",
+          "Member of the Guitar Club",
+          "Magna Cum Laude"
+        ]
+      }
+    ]
+  },
+  "widgets": {
+    "music": {
+      "title": "Music I Love",
+      "subtitle": "Highlighted Artists",
+      "live": "Live",
+      "progressiveRock": "Progressive Rock Legends",
+      "checkOut": "Check out our music!",
+      "favoriteArtist": "Favorite Artist",
+      "myBand": "My Band",
+      "monthlyListeners": "followers",
+      "listenSpotify": "Listen on Spotify",
+      "lastUpdated": "Updated"
+    },
+    "guardians": {
+      "unableToLoad": "Unable to load games",
+      "checkBackLater": "Check back later!",
+      "recentAndUpcoming": "Recent & Upcoming Games",
+      "live": "Live",
+      "seasonRecord": "2024 Season Record",
+      "division": "Division",
+      "alCentral": "AL Central",
+      "offSeason": "Off-season - No games scheduled",
+      "checkBackSeason": "Check back during baseball season!",
+      "go": "Go",
+      "guards": "Guards!"
+    }
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Open to new opportunities and interesting projects. Feel free to reach out!",
+    "methods": {
+      "email": {
+        "name": "Email",
+        "label": "mitchell.hess@outlook.com"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "label": "linkedin.com/in/mitchell-hess"
+      },
+      "github": {
+        "name": "GitHub",
+        "label": "github.com/Mitchell-Hess"
+      }
+    },
+    "connect": "Connect",
+    "footer": "© 2025 Mitchell Hess. Built with React, TypeScript, and Tailwind CSS."
+  }
+}

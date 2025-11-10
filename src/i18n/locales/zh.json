@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "主页",
+    "about": "关于",
+    "projects": "项目",
+    "experience": "经验",
+    "education": "教育",
+    "contact": "联系"
+  },
+  "home": {
+    "greeting": "你好，我是 Mitchell Hess",
+    "title": "全栈软件工程师",
+    "description": "我在百事公司工作，构建数据工具和全栈应用程序。我喜欢弄清楚如何让事情运作得更好，无论是改进用户界面还是让后端系统运行得更快。",
+    "viewWork": "查看我的作品",
+    "getInTouch": "联系我"
+  },
+  "about": {
+    "title": "关于我",
+    "paragraph1": "我是<strong>百事公司</strong>的<strong>软件工程师/数据科学家</strong>，在这里我构建数据质量框架并优化管道，以帮助团队更高效地工作。我的大部分时间都在Python和Databricks中度过，试图让复杂的事情变得简单。",
+    "paragraph2": "当我不编程时，我通常在我的乐队<strong>eileen</strong>中弹吉他，在健身房攀岩，或者看守护者队以令人心碎的方式输掉比赛。我倾向于深入研究我当时感兴趣的任何事物。",
+    "technologiesTitle": "我使用的技术",
+    "whatImInto": "我现在的兴趣",
+    "skills": {
+      "react": "React & TypeScript",
+      "python": "Python & ML",
+      "node": "Node.js",
+      "aws": "AWS & Docker",
+      "postgres": "PostgreSQL",
+      "git": "Git & CI/CD"
+    }
+  },
+  "projects": {
+    "title": "精选项目",
+    "subtitle": "我尝试新技术并将想法变为现实的副项目",
+    "applySimple": {
+      "name": "ApplySimple",
+      "description": "一个现代化的全栈求职申请跟踪器，具有AI驱动的洞察力，可优化您的求职策略。功能包括带有交互式图表的智能分析仪表板、ML驱动的成功预测、带密码重置的安全身份验证、CSV批量导入以及漂亮的暗黑模式支持。",
+      "keyFeatures": "主要功能和开发",
+      "features": [
+        "使用Next.js 15（App Router）和React 19构建全栈应用",
+        "开发FastAPI ML微服务用于成功概率预测",
+        "使用Prisma ORM设计PostgreSQL 16数据库进行数据管理",
+        "通过NextAuth.js实现安全身份验证，并通过Resend实现电子邮件密码重置",
+        "使用Recharts可视化和ML洞察创建交互式分析仪表板"
+      ],
+      "techStack": "技术栈",
+      "visitWebsite": "访问网站",
+      "viewGithub": "在GitHub上查看"
+    },
+    "scoutMaster": {
+      "name": "ScoutMaster",
+      "description": "一款移动应用程序，帮助您找到并访问您最喜欢的电影和电视节目拍摄的真实世界位置。探索交互式地图，获取路线，并发现标志性拍摄地点的幕后细节。",
+      "developmentProcess": "开发过程",
+      "process": [
+        "使用React Native为iOS和Android构建跨平台移动应用",
+        "集成Google Maps API用于交互式位置探索",
+        "使用Node.js和MongoDB设计REST API以管理拍摄位置",
+        "实现Firebase Auth用于用户帐户和保存的位置"
+      ],
+      "techStack": "技术栈",
+      "visitWebsite": "访问网站",
+      "appStore": "App Store"
+    },
+    "portfolio": {
+      "name": "交互式作品集",
+      "description": "这个作品集网站（是的，就是您现在正在查看的这个...相当元，我知道）。使用跟随您的自定义光标和随鼠标移动的渐变效果构建。包括流畅的动画、暗黑模式支持以及从Spotify和MLB提取数据的实时API集成。",
+      "techStackDeployment": "技术栈和部署",
+      "developmentHighlights": "开发亮点",
+      "highlights": [
+        "带有悬停效果的自定义光标（在移动设备上隐藏）",
+        "跟踪您的鼠标的动态渐变聚光灯",
+        "使用Docker容器化，配有自动化CI/CD以便于部署",
+        "实时API集成，显示当前Spotify播放和克利夫兰守护者队统计数据"
+      ],
+      "viewGithub": "在GitHub上查看"
+    }
+  },
+  "experience": {
+    "title": "工作经验",
+    "subtitle": "我工作过的地方和我构建的东西",
+    "positions": [
+      {
+        "role": "软件工程师/数据科学家",
+        "company": "百事公司",
+        "period": "2024年7月至今",
+        "logo": "/assets/pepsico_logo.jpg",
+        "details": [
+          "创建了一个Python框架，用于验证管道中的数据质量，团队在全公司范围内采用以保持一致性。它会自动标记问题并生成报告，节省了数小时的手动检查时间。",
+          "通过并行化错误检测和优化报告逻辑，将管道效率提高了30%，使高峰期间的数据处理速度显著加快。",
+          "与工程和DevOps团队合作，提供可扩展的Azure和Docker部署，提高了整个平台的系统正常运行时间和数据可靠性。",
+          "与业务团队密切合作，开发新功能，展示市场份额和其他关键指标的关键洞察，帮助利益相关者做出数据驱动的决策。"
+        ]
+      },
+      {
+        "role": "数据科学家实习生",
+        "company": "百事公司",
+        "period": "2023年5月至2023年8月",
+        "logo": "/assets/pepsico_logo.jpg",
+        "details": [
+          "构建ML模型，预测需求模式并在ETL问题引起问题之前捕获它们。这使工程师花在调试上的时间减少了约40%。",
+          "建立自动化仪表板，可视化数据质量指标和预测，使团队更容易一目了然地发现趋势和异常。"
+        ]
+      },
+      {
+        "role": "软件开发实习生",
+        "company": "Good Faith Energy",
+        "period": "2022年5月至2022年8月",
+        "logo": "/assets/good_faith_energy_logo.jpg",
+        "details": [
+          "使用Svelte、Node.js和PostgreSQL开发了一个太阳能定价工具，根据客户输入和当前定价数据生成实时报价。",
+          "通过构建响应式界面简化了报价工作流程，将生成时间缩短了20%，帮助销售团队更快地完成交易。"
+        ]
+      }
+    ]
+  },
+  "education": {
+    "title": "教育背景",
+    "subtitle": "计算机科学和软件工程的学术基础",
+    "degrees": [
+      {
+        "degree": "计算机科学硕士",
+        "school": "北德克萨斯大学",
+        "date": "预计2026年5月",
+        "logo": "/assets/northtexas_logo.jpg",
+        "bullets": [
+          "重点课程：AI软件开发、软件工程中的可用性测试、计算机算法分析",
+          "GPA: 4.0"
+        ]
+      },
+      {
+        "degree": "计算机科学学士",
+        "school": "北德克萨斯大学",
+        "date": "2024年5月",
+        "logo": "/assets/northtexas_logo.jpg",
+        "bullets": [
+          "数学辅修",
+          "获得CSCE本科网络安全证书",
+          "吉他俱乐部成员",
+          "优等生"
+        ]
+      }
+    ]
+  },
+  "widgets": {
+    "music": {
+      "title": "我喜欢的音乐",
+      "subtitle": "特色艺术家",
+      "live": "直播",
+      "listenSpotify": "在Spotify上收听",
+      "progressiveRock": "前卫摇滚传奇",
+      "checkOut": "听听我们的音乐！",
+      "favoriteArtist": "最喜欢的艺术家",
+      "myBand": "我的乐队",
+      "monthlyListeners": "粉丝",
+      "lastUpdated": "更新于"
+    },
+    "guardians": {
+      "unableToLoad": "无法加载比赛",
+      "checkBackLater": "请稍后再试！",
+      "recentAndUpcoming": "最近和即将进行的比赛",
+      "live": "直播",
+      "seasonRecord": "2024赛季记录",
+      "division": "分区",
+      "alCentral": "美联中区",
+      "offSeason": "休赛期 - 没有安排比赛",
+      "checkBackSeason": "请在棒球赛季期间回来查看！",
+      "go": "加油",
+      "guards": "卫士队！"
+    }
+  },
+  "contact": {
+    "title": "让我们一起工作",
+    "subtitle": "对新机会和有趣的项目持开放态度。请随时联系！",
+    "methods": {
+      "email": {
+        "name": "电子邮件",
+        "label": "mitchell.hess@outlook.com"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "label": "linkedin.com/in/mitchell-hess"
+      },
+      "github": {
+        "name": "GitHub",
+        "label": "github.com/Mitchell-Hess"
+      }
+    },
+    "connect": "联系",
+    "footer": "© 2025 Mitchell Hess。使用 React、TypeScript 和 Tailwind CSS 构建。"
+  }
+}

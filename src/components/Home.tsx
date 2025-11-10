@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="home"
@@ -62,7 +65,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.05 }}
           >
-            Hi, I'm Mitchell Hess
+            {t('home.greeting')}
           </motion.h1>
 
           <motion.p
@@ -71,7 +74,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
           >
-            Full-Stack Software Engineer
+            {t('home.title')}
           </motion.p>
 
           <motion.p
@@ -80,7 +83,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.15 }}
           >
-            I work at PepsiCo building data tools and full-stack applications. I like figuring out how to make things work better, whether that's improving a UI or making backend systems run faster.
+            {t('home.description')}
           </motion.p>
 
           <motion.div
@@ -93,13 +96,13 @@ export default function Home() {
               href="#projects"
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
             >
-              View My Work
+              {t('home.viewWork')}
             </a>
             <a
               href="#contact"
               className="px-8 py-4 bg-white dark:bg-slate-800 text-gray-800 dark:text-gray-200 rounded-full font-semibold shadow-lg hover:shadow-xl border-2 border-gray-200 dark:border-slate-700 hover:border-blue-600 dark:hover:border-blue-500 transform hover:scale-105 transition-all duration-200"
             >
-              Get In Touch
+              {t('home.getInTouch')}
             </a>
           </motion.div>
         </motion.div>

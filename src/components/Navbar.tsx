@@ -1,9 +1,25 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+
+  const languages = [
+    { code: 'en', name: 'English', flag: '🇺🇸' },
+    { code: 'zh', name: '中文', flag: '🇨🇳' },
+    { code: 'es', name: 'Español', flag: '🇪🇸' },
+    { code: 'hi', name: 'हिन्दी', flag: '🇮🇳' },
+    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+    { code: 'pt', name: 'Português', flag: '🇧🇷' },
+    { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+    { code: 'ja', name: '日本語', flag: '🇯🇵' },
+    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+  ];
 
   useEffect(() => {
     // Load theme preference - default to light mode
@@ -36,13 +52,19 @@ export default function Navbar() {
     }
   };
 
+  const changeLanguage = (langCode: string) => {
+    i18n.changeLanguage(langCode);
+    localStorage.setItem('language', langCode);
+    setLanguageMenuOpen(false);
+  };
+
   const links = [
-    { id: "home", label: "home" },
-    { id: "about", label: "about" },
-    { id: "projects", label: "projects" },
-    { id: "experience", label: "experience" },
-    { id: "education", label: "education" },
-    { id: "contact", label: "contact" },
+    { id: "home", label: t('nav.home') },
+    { id: "about", label: t('nav.about') },
+    { id: "projects", label: t('nav.projects') },
+    { id: "experience", label: t('nav.experience') },
+    { id: "education", label: t('nav.education') },
+    { id: "contact", label: t('nav.contact') },
   ];
 
   const handleLinkClick = () => {
@@ -54,6 +76,8 @@ export default function Navbar() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700 shadow-lg z-50 transition-all">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-4">
@@ -64,7 +88,7 @@ export default function Navbar() {
           </h1>
         </a>
 
-        {/* Desktop Links + toggle */}
+        {/* Desktop Links + toggles */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <a
@@ -77,11 +101,58 @@ export default function Navbar() {
             </a>
           ))}
 
+          {/* Language Selector - Desktop */}
+          <div className="relative">
+            <button
+              onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+              className="h-10 px-3 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
+                         dark:from-slate-700 dark:to-slate-800 dark:hover:from-slate-600 dark:hover:to-slate-700 dark:text-gray-200
+                         transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 flex-shrink-0"
+              aria-label="Select language"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+              <span className="text-sm font-medium">{currentLanguage.code.toUpperCase()}</span>
+            </button>
+
+            <AnimatePresence>
+              {languageMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-gray-200 dark:border-slate-700 overflow-hidden z-50"
+                >
+                  <div className="max-h-80 overflow-y-auto">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-slate-700 transition flex items-center justify-between ${
+                          i18n.language === lang.code ? 'bg-blue-50 dark:bg-slate-700' : ''
+                        }`}
+                      >
+                        <span className="text-sm font-medium text-gray-800 dark:text-gray-200">
+                          {lang.name}
+                        </span>
+                        <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">
+                          {lang.code.toUpperCase()}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <button
             onClick={toggleDarkMode}
             className="text-xl w-10 h-10 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
                        dark:from-slate-700 dark:to-slate-800 dark:hover:from-slate-600 dark:hover:to-slate-700 dark:text-yellow-300
-                       transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center flex-shrink-0"
+                       transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center flex-shrink-0"
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
@@ -96,13 +167,60 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile menu button + dark mode toggle */}
+        {/* Mobile menu button + toggles */}
         <div className="flex md:hidden items-center gap-3">
+          {/* Language Selector - Mobile */}
+          <div className="relative">
+            <button
+              onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+              className="h-9 px-2 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
+                         dark:from-slate-700 dark:to-slate-800 dark:hover:from-slate-600 dark:hover:to-slate-700 dark:text-gray-200
+                         transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-1.5 flex-shrink-0"
+              aria-label="Select language"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+              </svg>
+              <span className="text-xs font-medium">{currentLanguage.code.toUpperCase()}</span>
+            </button>
+
+            <AnimatePresence>
+              {languageMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 mt-2 w-40 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-gray-200 dark:border-slate-700 overflow-hidden z-50"
+                >
+                  <div className="max-h-60 overflow-y-auto">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`w-full px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-slate-700 transition flex items-center justify-between ${
+                          i18n.language === lang.code ? 'bg-blue-50 dark:bg-slate-700' : ''
+                        }`}
+                      >
+                        <span className="text-xs font-medium text-gray-800 dark:text-gray-200">
+                          {lang.name}
+                        </span>
+                        <span className="text-[10px] font-semibold text-gray-500 dark:text-gray-400">
+                          {lang.code.toUpperCase()}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <button
             onClick={toggleDarkMode}
             className="text-lg w-9 h-9 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800
                        dark:from-slate-700 dark:to-slate-800 dark:hover:from-slate-600 dark:hover:to-slate-700 dark:text-yellow-300
-                       transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center flex-shrink-0"
+                       transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center flex-shrink-0"
             aria-label="Toggle dark mode"
           >
             {darkMode ? (
@@ -165,5 +283,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-

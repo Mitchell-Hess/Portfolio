@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "home": "accueil",
+    "about": "à propos",
+    "projects": "projets",
+    "experience": "expérience",
+    "education": "éducation",
+    "contact": "contact"
+  },
+  "home": {
+    "greeting": "Bonjour, je suis Mitchell Hess",
+    "title": "Ingénieur Logiciel Full-Stack",
+    "description": "Je travaille chez PepsiCo à créer des outils de données et des applications full-stack. J'aime comprendre comment améliorer le fonctionnement des choses, qu'il s'agisse d'améliorer une interface utilisateur ou de rendre les systèmes backend plus rapides.",
+    "viewWork": "Voir Mon Travail",
+    "getInTouch": "Me Contacter"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "paragraph1": "Je suis <strong>Ingénieur Logiciel / Data Scientist</strong> chez <strong>PepsiCo</strong>, où je construis des frameworks de qualité de données et optimise les pipelines pour aider les équipes à travailler plus efficacement. Je passe la plupart de ma journée en Python et Databricks, essayant de simplifier les choses compliquées.",
+    "paragraph2": "Quand je ne code pas, je joue généralement de la guitare dans mon groupe <strong>eileen</strong>, je fais de l'escalade en salle, ou je regarde les Guardians perdre de manière déchirante. J'ai tendance à m'immerger profondément dans tout ce qui m'intéresse sur le moment.",
+    "technologiesTitle": "Technologies avec lesquelles je travaille",
+    "whatImInto": "Ce Qui M'Intéresse Actuellement",
+    "skills": {
+      "react": "React & TypeScript",
+      "python": "Python & ML",
+      "node": "Node.js",
+      "aws": "AWS & Docker",
+      "postgres": "PostgreSQL",
+      "git": "Git & CI/CD"
+    }
+  },
+  "projects": {
+    "title": "Projets en Vedette",
+    "subtitle": "Projets personnels où j'expérimente de nouvelles technologies et donne vie aux idées",
+    "applySimple": {
+      "name": "ApplySimple",
+      "description": "Un tracker moderne d'applications d'emploi full-stack avec des insights alimentés par l'IA pour optimiser votre stratégie de recherche d'emploi. Comprend des tableaux de bord d'analyse intelligents avec des graphiques interactifs, des prédictions de succès alimentées par ML, une authentification sécurisée avec réinitialisation de mot de passe, une importation en masse CSV et un magnifique support du mode sombre.",
+      "keyFeatures": "Fonctionnalités Clés et Développement",
+      "features": [
+        "Application full-stack construite avec Next.js 15 (App Router) et React 19",
+        "Microservice ML développé avec FastAPI pour les prédictions de probabilité de succès",
+        "Base de données PostgreSQL 16 conçue avec Prisma ORM pour la gestion des données",
+        "Authentification sécurisée mise en œuvre avec NextAuth.js et réinitialisation de mot de passe par email via Resend",
+        "Tableau de bord d'analyse interactif créé avec des visualisations Recharts et des insights ML"
+      ],
+      "techStack": "Stack Technologique",
+      "visitWebsite": "Visiter le Site Web",
+      "viewGithub": "Voir sur GitHub"
+    },
+    "scoutMaster": {
+      "name": "ScoutMaster",
+      "description": "Une application mobile qui vous aide à trouver et visiter les lieux réels où vos films et émissions de télévision préférés ont été tournés. Explorez des cartes interactives, obtenez des itinéraires et découvrez des détails en coulisses sur des lieux de tournage emblématiques.",
+      "developmentProcess": "Processus de Développement",
+      "process": [
+        "Application mobile multiplateforme construite avec React Native pour iOS et Android",
+        "API Google Maps intégrée pour l'exploration interactive de lieux",
+        "API REST conçue avec Node.js et MongoDB pour gérer les lieux de tournage",
+        "Firebase Auth implémenté pour les comptes utilisateurs et les lieux enregistrés"
+      ],
+      "techStack": "Stack Technologique",
+      "visitWebsite": "Visiter le Site Web",
+      "appStore": "App Store"
+    },
+    "portfolio": {
+      "name": "Portfolio Interactif",
+      "description": "Ce site portfolio (oui, celui que vous regardez en ce moment... assez méta, je sais). Construit avec un curseur personnalisé qui vous suit et un effet de dégradé qui se déplace avec votre souris. Comprend des animations fluides, un support du mode sombre et des intégrations API en direct extrayant des données de Spotify et MLB.",
+      "techStackDeployment": "Stack Technologique et Déploiement",
+      "developmentHighlights": "Points Forts du Développement",
+      "highlights": [
+        "Curseur personnalisé avec effets de survol (masqué sur les appareils mobiles)",
+        "Projecteur de dégradé dynamique qui suit votre souris",
+        "Dockerisé avec CI/CD automatisé pour un déploiement facile",
+        "Intégrations API en temps réel affichant les lectures Spotify actuelles et les statistiques des Cleveland Guardians"
+      ],
+      "viewGithub": "Voir sur GitHub"
+    }
+  },
+  "experience": {
+    "title": "Expérience",
+    "subtitle": "Où j'ai travaillé et ce que j'ai construit",
+    "positions": [
+      {
+        "role": "Ingénieur Logiciel / Data Scientist",
+        "company": "PepsiCo, Inc.",
+        "period": "Juil 2024 à Présent",
+        "logo": "/assets/pepsico_logo.jpg",
+        "details": [
+          "Créé un framework Python qui valide la qualité des données à travers les pipelines, que l'équipe a adopté à l'échelle de l'entreprise pour la cohérence. Il signale automatiquement les problèmes et génère des rapports, économisant des heures de vérifications manuelles.",
+          "Amélioré l'efficacité du pipeline de 30% grâce à la détection d'erreurs parallélisée et à la logique de reporting optimisée, rendant le traitement des données considérablement plus rapide pendant les périodes de pointe.",
+          "Collaboré avec les équipes d'ingénierie et DevOps pour livrer des déploiements Azure et Docker évolutifs, augmentant la disponibilité du système et la fiabilité des données sur l'ensemble de la plateforme.",
+          "Travaillé en étroite collaboration avec les équipes commerciales pour développer de nouvelles fonctionnalités qui mettent en lumière des insights clés sur les parts de marché et d'autres métriques critiques, aidant les parties prenantes à prendre des décisions basées sur les données."
+        ]
+      },
+      {
+        "role": "Stagiaire Data Scientist",
+        "company": "PepsiCo, Inc.",
+        "period": "Mai 2023 à Août 2023",
+        "details": [
+          "Construit des modèles ML qui prédisent les modèles de demande et détectent les problèmes ETL avant qu'ils ne causent des problèmes. Cela a réduit le temps que les ingénieurs passaient à déboguer d'environ 40%.",
+          "Mis en place des tableaux de bord automatisés qui visualisent les métriques de qualité des données et les prévisions, facilitant la détection des tendances et des anomalies pour l'équipe d'un coup d'œil."
+        ],
+        "logo": "/assets/pepsico_logo.jpg"
+      },
+      {
+        "role": "Stagiaire en Développement Logiciel",
+        "company": "Good Faith Energy",
+        "period": "Mai 2022 à Août 2022",
+        "details": [
+          "Développé un outil de tarification solaire utilisant Svelte, Node.js et PostgreSQL qui génère des devis en temps réel basés sur les entrées des clients et les données de tarification actuelles.",
+          "Rationalisé le flux de travail de devis en construisant une interface responsive qui a réduit le temps de génération de 20%, aidant l'équipe de vente à conclure des affaires plus rapidement."
+        ],
+        "logo": "/assets/good_faith_energy_logo.jpg"
+      }
+    ]
+  },
+  "education": {
+    "title": "Éducation",
+    "subtitle": "Fondation académique en informatique et ingénierie logicielle",
+    "degrees": [
+      {
+        "degree": "M.S. Informatique",
+        "school": "Université du Nord du Texas",
+        "date": "Prévu Mai 2026",
+        "logo": "/assets/northtexas_logo.jpg",
+        "bullets": [
+          "Cours en Vedette : Développement Logiciel pour l'IA, Tests d'Utilisabilité en Ingénierie Logicielle, Analyse des Algorithmes Informatiques",
+          "GPA: 4.0"
+        ]
+      },
+      {
+        "degree": "B.S. Informatique",
+        "school": "Université du Nord du Texas",
+        "date": "Mai 2024",
+        "bullets": [
+          "Mineure en Mathématiques",
+          "Certificat de Cybersécurité de Premier Cycle CSCE décerné",
+          "Membre du Club de Guitare",
+          "Magna Cum Laude"
+        ],
+        "logo": "/assets/northtexas_logo.jpg"
+      }
+    ]
+  },
+  "widgets": {
+    "music": {
+      "title": "La Musique que J'aime",
+      "subtitle": "Artistes en Vedette",
+      "live": "En Direct",
+      "listenSpotify": "Écouter sur Spotify",
+      "progressiveRock": "Légendes du Rock Progressif",
+      "checkOut": "Écoutez notre musique!",
+      "favoriteArtist": "Artiste Favori",
+      "myBand": "Mon Groupe",
+      "monthlyListeners": "abonnés",
+      "lastUpdated": "Mis à jour"
+    },
+    "guardians": {
+      "unableToLoad": "Impossible de charger les matchs",
+      "checkBackLater": "Revenez plus tard!",
+      "recentAndUpcoming": "Matchs Récents et À Venir",
+      "live": "En Direct",
+      "seasonRecord": "Bilan de la Saison 2024",
+      "division": "Division",
+      "alCentral": "AL Central",
+      "offSeason": "Hors saison - Aucun match programmé",
+      "checkBackSeason": "Revenez pendant la saison de baseball!",
+      "go": "Allez",
+      "guards": "Guards!"
+    }
+  },
+  "contact": {
+    "title": "Travaillons Ensemble",
+    "subtitle": "Ouvert à de nouvelles opportunités et à des projets intéressants. N'hésitez pas à me contacter !",
+    "methods": {
+      "email": {
+        "name": "Email",
+        "label": "mitchell.hess@outlook.com"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "label": "linkedin.com/in/mitchell-hess"
+      },
+      "github": {
+        "name": "GitHub",
+        "label": "github.com/Mitchell-Hess"
+      }
+    },
+    "connect": "Se Connecter",
+    "footer": "© 2025 Mitchell Hess. Construit avec React, TypeScript et Tailwind CSS."
+  }
+}
